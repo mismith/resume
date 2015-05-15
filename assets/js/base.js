@@ -1,4 +1,4 @@
-angular.module('XXXXXX', ['ui.router', 'ui.bootstrap', 'duScroll', 'firebaseHelper', 'contentful', 'hc.marked'])
+angular.module('XXXXXX', ['ui.bootstrap', 'firebaseHelper', 'json-tree'])
 	
 	.run(function(){
 		// remove 300ms click delay on touch devices
@@ -8,72 +8,69 @@ angular.module('XXXXXX', ['ui.router', 'ui.bootstrap', 'duScroll', 'firebaseHelp
 		viewportUnitsBuggyfill.init();
 	})
 	
-	.config(["$locationProvider", "$urlRouterProvider", "$stateProvider", "$firebaseHelperProvider", "contentfulProvider", function($locationProvider, $urlRouterProvider, $stateProvider, $firebaseHelperProvider, contentfulProvider){
-		// routing
-		$locationProvider.html5Mode(true);
-		$urlRouterProvider.when('', '/');
-		var pages = [
-			'home'
-		];
-		$stateProvider
-			// pages
-			.state('main', {
-				abstract: true,
-				templateUrl: 'views/main.html',
-			})
-				.state('page', {
-					parent: 'main',
-					url: '/{page:|' + pages.join('|') + '}',
-					templateUrl: function($stateParams){
-						return 'views/page/' + ($stateParams.page || 'home') + '.html';
-					},
-				})
-			// catch-all
-			.state('otherwise', {
-				url: '*path',
-				templateUrl: 'views/page/404.html',
-			});
-		
+	.config(["$firebaseHelperProvider", function($firebaseHelperProvider){
 		// data
-		$firebaseHelperProvider.namespace('demo');
-		contentfulProvider.setOptions({
-			accessToken: 'XXXXXX',
-			space:       'XXXXXX',
-		});
+		$firebaseHelperProvider.namespace('mismith');
 	}])
 	
-	.controller('AppCtrl', ["$rootScope", "$state", "$document", "$location", function($rootScope, $state, $document, $location){
-		$rootScope.$state = $state;
-		
-		// smooth scrolling
-		$rootScope.scrollTo = function(id){
-			var el = document.getElementById(id);
-			if(el) $document.scrollToElementAnimated(el, document.getElementById('header').offsetHeight || 0);
-		};
-		$rootScope.scrollTo($location.path().replace(/^\//, ''));
-	}])
-	.controller('HomePageCtrl', ["$scope", "$firebaseHelper", "contentful", function($scope, $firebaseHelper, contentful){
-		// angular
-		$scope.angularWorking = 'Yes';
-		
-		// firebase
-		$firebaseHelper.load('example').then(function(example){
-			$scope.firebaseWorking = true;
-		});
-		
-		// contentful
-		contentful.entries('order=sys.createdAt').then(function(response){
-			$scope.entries = response.data.items;
-		});
-	}])
-	
-	// smooth scrolling
-	.directive('href', function(){
-		return function($scope, $element, $attrs){
-			if($attrs.href && $attrs.href[0] == '#'){
-				$element.on('click', function(e){
-					$scope.scrollTo(($attrs.href || '').replace(/^#/, ''));
-				});
+	.controller('AppCtrl', ["$rootScope", function($rootScope){
+		$rootScope.jsonData = {
+			"social": {
+				"github": {
+					"name": "Github",
+					"link": "https://github.com/mismith",
+					"user": "mismith"
+				},
+				"twitter": {
+					"name": "Twitter",
+					"link": "https://twitter.com/mismith",
+					"user": "_mismith"
+				},
+				"facebook": {
+					"name": "Facebook",
+					"link": "https://www.facebook.com/mismith",
+					"user": "mismith"
+				},
+				"github": {
+					"name": "Instagram",
+					"link": "https://instagram.com/_mismith/",
+					"user": "_mismith"
+				},
+				"stackoverflow": {
+					"name": "Stack Overflow",
+					"link": "http://stackoverflow.com/users/888928/murray-smith"
+				},
+				"tumblr": {
+					"name": "Tumblr",
+					"link": "http://mismith.tumblr.com/",
+					"user": "mismith"
+				},
+				"quora": {
+					"name": "Quora",
+					"link": "http://www.quora.com/Murray-Smith-1"
+				},
+				"linkedin": {
+					"name": "LinkedIn",
+					"link": "https://www.linkedin.com/in/murrayiainsmith"
+				},
+				"reddit": {
+					"name": "Reddit",
+					"link": "http://www.reddit.com/user/mismith/"
+				},
+				"lastfm": {
+					"name": "Last.fm",
+					"link": "http://www.last.fm/user/cinesmith"
+				},
+				"rdio": {
+					"name": "Rdio",
+					"link": "http://www.rdio.com/people/murrayiainsmith/"
+				},
+			},
+			"software": {
+				
+			},
+			"technology": {
+				
 			}
 		};
-	});
+	}]);
