@@ -10,7 +10,66 @@ body {
 }
 
 // classes
-input {
-	width: auto !important;
-	height: auto !important;
+.nodes {
+	.node {
+		cursor: pointer;
+		
+		figure {
+			display: inline-block;
+			vertical-align: middle;
+			
+			* {
+				@s: 32px;
+				width: @s;
+				height: @s;
+				font-size: @s;
+				text-align: center;
+				vertical-align: middle;
+				transition: all @t/2 ease-in-out;
+			}
+		}
+/*
+		&:hover {
+			figure {
+				* {
+					@s: 128px;
+					width: @s;
+					height: @s;
+					font-size: @s;
+				}
+			}
+		}
+*/
+	}
+	&.linking {
+		user-select: none;
+		
+		.node {
+			color: black !important;
+			opacity: .1;
+			cursor: crosshair;
+			
+			&.text-danger {
+				opacity: .33;
+			}
+			&.text-warning {
+				opacity: .55;
+			}
+			&.text-success {
+				opacity: .85;
+			}
+			&.text-danger,
+			&.text-warning,
+			&.text-success {
+				cursor: cell;
+			}
+			&.text-primary {
+				opacity: 1;
+				cursor: pointer;
+			}
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
 }

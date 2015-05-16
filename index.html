@@ -65,8 +65,22 @@
 <body ng-controller="AppCtrl">
 	
 	<div id="app" class="grid-columns">
-		<json-tree json="jsonData" collapsed-level="99"></json-tree>
-		<pre>{{ jsonData | json }}</pre>
+		<div>
+			<ul class="nodes" ng-class="{linking: linked.key}">
+				<li ng-repeat="(key, item) in jsonData" ng-click="link(key, item, $event)" class="node" ng-class="{'text-primary': item.$linked, 'text-success': isLinked(key), 'text-warning': isLinked(key, 2), 'text-danger': isLinked(key, 3)}">
+					<figure ng-switch="item.icon">
+						<img ng-switch-when="icns" ng-src="assets/img/icons/icns/{{ key }}.iconset/icon_128x128@2x.png" width="32" />
+						<img ng-switch-when="svg" ng-src="assets/img/icons/svg/{{ key }}.svg" width="32" />
+						<img ng-switch-when="png" ng-src="assets/img/icons/png/{{ key }}.png" width="32" />
+						<i ng-switch-when="fa" class="fa fa-{{ key }}"></i>
+						<i ng-switch-default class="{{ item.icon }}"></i>
+					</figure>
+					<span ng-bind="item.name"></span>
+					<a ng-if="item.url" ng-href="{{ item.url }}" target="_blank"><!-- <span ng-if="item.user" ng-bind="item.user"></span>  --><i class="fa fa-chevron-circle-right"></i></a>
+				</li>
+			</ul>
+		</div>
+		<pre ng-bind="jsonData | json"></pre>
 	</div>
 	
 	<!-- Scripts -->
