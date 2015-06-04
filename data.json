@@ -1,362 +1,592 @@
 {
-	"github": {
-		"name": "Github",
-		"url":  "https://github.com/mismith",
-		"user": "mismith",
-		"icon": "fa",
-		"tags": [
-			"social"
-		],
-		"links": [
-			"stackoverflow",
-			"git"
-		]
-	},
-	"twitter": {
-		"name": "Twitter",
-		"url":  "https://twitter.com/mismith",
-		"user": "_mismith",
-		"icon": "svg",
-		"tags": [
-			"social"
-		]
-	},
-	"facebook": {
-		"name": "Facebook",
-		"url":  "https://www.facebook.com/mismith",
-		"user": "mismith",
-		"icon": "svg",
-		"tags": [
-			"social"
-		]
-	},
-	"instagram": {
-		"name": "Instagram",
-		"url":  "https://instagram.com/_mismith/",
-		"user": "_mismith",
-		"icon": "png",
-		"tags": [
-			"social"
-		]
-	},
-	"tumblr": {
-		"name": "Tumblr",
-		"url":  "http://mismith.tumblr.com/",
-		"user": "mismith",
-		"icon": "svg",
-		"tags": [
-			"social"
-		]
-	},
-	"stackoverflow": {
-		"name": "Stack Overflow",
-		"url":  "http://stackoverflow.com/users/888928/murray-smith",
-		"icon": "svg",
-		"tags": [
-			"social"
-		],
-		"links": [
-			"github",
-			"quora"
-		]
-	},
-	"quora": {
-		"name": "Quora",
-		"url":  "http://www.quora.com/Murray-Smith-1",
-		"icon": "svg",
-		"tags": [
-			"social"
-		],
-		"links": [
-			"stackoverflow"
-		]
-	},
-	"linkedin": {
-		"name": "LinkedIn",
-		"url":  "https://www.linkedin.com/in/murrayiainsmith",
-		"icon": "svg",
-		"tags": [
-			"social"
-		]
-	},
-	"reddit": {
-		"name": "Reddit",
-		"url":  "http://www.reddit.com/user/mismith/",
-		"icon": "svg",
-		"tags": [
-			"social"
-		]
-	},
-	"lastfm": {
-		"name": "Last.fm",
-		"url":  "http://www.last.fm/user/cinesmith",
-		"icon": "icns",
-		"tags": [
-			"social"
-		]
-	},
-	
-	
-	"rdio": {
-		"name": "Rdio",
-		"url":  "http://www.rdio.com/people/murrayiainsmith/",
-		"icon": "icns",
-		"tags": [
-			"social",
-			"software"
-		]
-	},
-	"chrome": {
-		"name": "Chrome",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"mail": {
-		"name": "Mail",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"calendar": {
-		"name": "Calendar",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"slack": {
-		"name": "Slack",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"skype": {
-		"name": "Skype",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"itunes": {
-		"name": "iTunes",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"tower": {
-		"name": "Tower",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"coda": {
-		"name": "Coda",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"sequelpro": {
-		"name": "Sequel Pro",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"transmit": {
-		"name": "Transmit",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"terminal": {
-		"name": "Terminal",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"photoshop": {
-		"name": "Photoshop",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"illustrator": {
-		"name": "Illustrator",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"word": {
-		"name": "Word",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"excel": {
-		"name": "Excel",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"preview": {
-		"name": "Preview",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"remotedesktop": {
-		"name": "Remote Desktop",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"harvest": {
-		"name": "Harvest",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"systempreferences": {
-		"name": "System Preferences",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"sublimetext": {
-		"name": "Sublime Text",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"xcode": {
-		"name": "Xcode",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	"iteleport": {
-		"name": "iTeleport",
-		"url":  "",
-		"icon": "icns",
-		"tags": [
-			"software"
-		]
-	},
-	
-	
-	"git": {
-		"name": "git",
-		"url":  "",
-		"icon": "fa",
-		"tags": [
-			"technology"
-		],
-		"links": [
-			"github"
-		]
-	},
-	"html5": {
-		"name": "HTML5",
-		"url":  "",
-		"icon": "svg",
-		"tags": [
-			"technology"
-		]
-	},
-	"css3": {
-		"name": "CSS3",
-		"url":  "",
-		"icon": "svg",
-		"tags": [
-			"technology"
-		]
-	},
-	"less": {
-		"name": "LESS",
-		"url":  "",
-		"icon": "png",
-		"tags": [
-			"technology"
-		]
-	},
-	"gulp": {
-		"name": "gulp",
-		"url":  "",
-		"icon": "svg",
-		"tags": [
-			"technology"
-		]
-	},
-	"angular": {
-		"name": "AngularJS",
-		"url":  "",
-		"icon": "svg",
-		"tags": [
-			"technology"
-		]
-	},
-	"node": {
-		"name": "Node.js",
-		"url":  "",
-		"icon": "svg",
-		"tags": [
-			"technology"
-		]
-	},
-	"php": {
-		"name": "PHP",
-		"url":  "",
-		"icon": "svg",
-		"tags": [
-			"technology"
-		]
-	},
-	"jquery": {
-		"name": "jQuery",
-		"url":  "",
-		"icon": "svg",
-		"tags": [
-			"technology"
-		]
-	}
+  "github": {
+    "name": "Github",
+    "url": "https://github.com/mismith",
+    "user": "mismith",
+    "icon": "fa",
+    "tags": [
+      "social",
+      "software"
+    ],
+    "links": [
+      "stackoverflow",
+      "chrome",
+      "git",
+      "tower"
+    ]
+  },
+  "twitter": {
+    "name": "Twitter",
+    "url": "https://twitter.com/mismith",
+    "user": "_mismith",
+    "icon": "svg",
+    "tags": [
+      "social"
+    ],
+    "links": [
+      "chrome",
+      "facebook"
+    ]
+  },
+  "facebook": {
+    "name": "Facebook",
+    "url": "https://www.facebook.com/mismith",
+    "user": "mismith",
+    "icon": "svg",
+    "tags": [
+      "social"
+    ],
+    "links": [
+      "chrome",
+      "twitter",
+      "tumblr",
+      "skype",
+      "linkedin",
+      "instagram"
+    ]
+  },
+  "instagram": {
+    "name": "Instagram",
+    "url": "https://instagram.com/_mismith/",
+    "user": "_mismith",
+    "icon": "png",
+    "tags": [
+      "social"
+    ],
+    "links": [
+      "chrome",
+      "facebook"
+    ]
+  },
+  "tumblr": {
+    "name": "Tumblr",
+    "url": "http://mismith.tumblr.com/",
+    "user": "mismith",
+    "icon": "svg",
+    "tags": [
+      "social"
+    ],
+    "links": [
+      "chrome",
+      "facebook"
+    ]
+  },
+  "stackoverflow": {
+    "name": "Stack Overflow",
+    "url": "http://stackoverflow.com/users/888928/murray-smith",
+    "icon": "svg",
+    "tags": [
+      "social"
+    ],
+    "links": [
+      "github",
+      "quora",
+      "angular",
+      "chrome",
+      "css3"
+    ]
+  },
+  "quora": {
+    "name": "Quora",
+    "url": "http://www.quora.com/Murray-Smith-1",
+    "icon": "svg",
+    "tags": [
+      "social"
+    ],
+    "links": [
+      "stackoverflow",
+      "chrome"
+    ]
+  },
+  "linkedin": {
+    "name": "LinkedIn",
+    "url": "https://www.linkedin.com/in/murrayiainsmith",
+    "icon": "svg",
+    "tags": [
+      "social"
+    ],
+    "links": [
+      "chrome",
+      "facebook"
+    ]
+  },
+  "reddit": {
+    "name": "Reddit",
+    "url": "http://www.reddit.com/user/mismith/",
+    "icon": "svg",
+    "tags": [
+      "social"
+    ],
+    "links": [
+      "chrome"
+    ]
+  },
+  "lastfm": {
+    "name": "Last.fm",
+    "url": "http://www.last.fm/user/cinesmith",
+    "icon": "icns",
+    "tags": [
+      "social"
+    ],
+    "links": [
+      "chrome"
+    ]
+  },
+  "rdio": {
+    "name": "Rdio",
+    "url": "http://www.rdio.com/people/murrayiainsmith/",
+    "icon": "icns",
+    "tags": [
+      "social",
+      "software"
+    ],
+    "links": [
+      "chrome"
+    ]
+  },
+  "chrome": {
+    "name": "Chrome",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ],
+    "links": [
+      "angular",
+      "css3",
+      "facebook",
+      "github",
+      "html5",
+      "instagram",
+      "jquery",
+      "lastfm",
+      "less",
+      "linkedin",
+      "php",
+      "quora",
+      "rdio",
+      "reddit",
+      "stackoverflow",
+      "tumblr",
+      "twitter"
+    ]
+  },
+  "mail": {
+    "name": "Mail",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ],
+    "links": [
+      "calendar"
+    ]
+  },
+  "calendar": {
+    "name": "Calendar",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ],
+    "links": [
+      "mail"
+    ]
+  },
+  "slack": {
+    "name": "Slack",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ]
+  },
+  "skype": {
+    "name": "Skype",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ],
+    "links": [
+      "facebook"
+    ]
+  },
+  "itunes": {
+    "name": "iTunes",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ]
+  },
+  "tower": {
+    "name": "Tower",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ],
+    "links": [
+      "git",
+      "github"
+    ]
+  },
+  "coda": {
+    "name": "Coda",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ],
+    "links": [
+      "angular",
+      "css3",
+      "git",
+      "gulp",
+      "html5",
+      "jquery",
+      "less",
+      "node",
+      "php",
+      "terminal"
+    ]
+  },
+  "sequelpro": {
+    "name": "Sequel Pro",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ]
+  },
+  "transmit": {
+    "name": "Transmit",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ]
+  },
+  "terminal": {
+    "name": "Terminal",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ],
+    "links": [
+      "coda"
+    ]
+  },
+  "photoshop": {
+    "name": "Photoshop",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ]
+  },
+  "illustrator": {
+    "name": "Illustrator",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ]
+  },
+  "word": {
+    "name": "Word",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ],
+    "links": [
+      "excel"
+    ]
+  },
+  "excel": {
+    "name": "Excel",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ],
+    "links": [
+      "word"
+    ]
+  },
+  "preview": {
+    "name": "Preview",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ]
+  },
+  "remotedesktop": {
+    "name": "Remote Desktop",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ]
+  },
+  "harvest": {
+    "name": "Harvest",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ]
+  },
+  "systempreferences": {
+    "name": "System Preferences",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ]
+  },
+  "sublimetext": {
+    "name": "Sublime Text",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ],
+    "links": [
+      "angular",
+      "css3"
+    ]
+  },
+  "xcode": {
+    "name": "Xcode",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ],
+    "links": []
+  },
+  "iteleport": {
+    "name": "iTeleport",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ]
+  },
+  "server": {
+    "name": "OS X Server",
+    "url": "",
+    "icon": "icns",
+    "tags": [
+      "software"
+    ]
+  },
+  "beanstalk": {
+    "name": "BeanStalk",
+    "url": "",
+    "icon": "png",
+    "tags": [
+      "software"
+    ]
+  },
+  "git": {
+    "name": "git",
+    "url": "",
+    "icon": "fa",
+    "tags": [
+      "technology"
+    ],
+    "links": [
+      "coda",
+      "github",
+      "tower"
+    ]
+  },
+  "html5": {
+    "name": "HTML5",
+    "url": "",
+    "icon": "svg",
+    "tags": [
+      "technology"
+    ],
+    "links": [
+      "angular",
+      "chrome",
+      "coda",
+      "css3"
+    ]
+  },
+  "css3": {
+    "name": "CSS3",
+    "url": "",
+    "icon": "svg",
+    "tags": [
+      "technology"
+    ],
+    "links": [
+      "angular",
+      "chrome",
+      "coda",
+      "gulp",
+      "html5",
+      "less",
+      "stackoverflow",
+      "sublimetext"
+    ]
+  },
+  "less": {
+    "name": "LESS",
+    "url": "",
+    "icon": "png",
+    "tags": [
+      "technology"
+    ],
+    "links": [
+      "angular",
+      "chrome",
+      "coda",
+      "css3",
+      "gulp"
+    ]
+  },
+  "gulp": {
+    "name": "gulp",
+    "url": "",
+    "icon": "svg",
+    "tags": [
+      "technology"
+    ],
+    "links": [
+      "angular",
+      "coda",
+      "css3",
+      "less",
+      "node"
+    ]
+  },
+  "angular": {
+    "name": "AngularJS",
+    "url": "",
+    "icon": "svg",
+    "tags": [
+      "technology"
+    ],
+    "links": [
+      "chrome",
+      "coda",
+      "css3",
+      "gulp",
+      "html5",
+      "less",
+      "stackoverflow",
+      "sublimetext"
+    ]
+  },
+  "node": {
+    "name": "Node.js",
+    "url": "",
+    "icon": "svg",
+    "tags": [
+      "technology"
+    ],
+    "links": [
+      "coda",
+      "gulp"
+    ]
+  },
+  "php": {
+    "name": "PHP",
+    "url": "",
+    "icon": "svg",
+    "tags": [
+      "technology"
+    ],
+    "links": [
+      "chrome",
+      "coda"
+    ]
+  },
+  "jquery": {
+    "name": "jQuery",
+    "url": "",
+    "icon": "svg",
+    "tags": [
+      "technology"
+    ],
+    "links": [
+      "chrome",
+      "coda"
+    ]
+  },
+  "npm": {
+    "name": "npm",
+    "url": "",
+    "icon": "svg",
+    "tags": [
+      "technology"
+    ]
+  },
+  "js": {
+    "name": "Javascript",
+    "url": "",
+    "icon": "svg",
+    "tags": [
+      "technology"
+    ]
+  },
+  "es6": {
+    "name": "ES6",
+    "url": "",
+    "icon": "png",
+    "tags": [
+      "technology",
+      "learning"
+    ]
+  },
+  "react": {
+    "name": "React",
+    "url": "",
+    "icon": "svg",
+    "tags": [
+      "technology",
+      "learning"
+    ]
+  },
+  "mysql": {
+    "name": "MySQL",
+    "url": "",
+    "icon": "svg",
+    "tags": [
+      "technology"
+    ]
+  },
+  "mac": {
+    "name": "Mac",
+    "url": "",
+    "icon": "svg",
+    "tags": [
+      "technology"
+    ]
+  },
+  "linux": {
+    "name": "Linux",
+    "url": "",
+    "icon": "svg",
+    "tags": [
+      "technology"
+    ]
+  },
+  "openshift": {
+    "name": "OpenShift",
+    "url": "",
+    "icon": "",
+    "tags": [
+      "technology"
+    ]
+  }
 }
