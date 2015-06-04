@@ -1,4 +1,4 @@
-angular.module('XXXXXX', ['ui.bootstrap', 'firebaseHelper', 'json-tree'])
+angular.module('XXXXXX', ['ui.bootstrap', 'firebaseHelper'])
 	
 	.run(function(){
 		// remove 300ms click delay on touch devices
