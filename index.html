@@ -66,12 +66,12 @@
 	<div id="app" class="grid-columns">
 		<div>
 			<ul class="nodes" ng-class="{linking: linked.key}">
-				<li ng-repeat="(key, item) in jsonData" ng-click="link(key, item, $event)" class="node" ng-class="{'text-primary': item.$linked, 'text-success': isLinked(key), 'text-warning': isLinked(key, 2), 'text-danger': isLinked(key, 3)}">
+				<li ng-repeat="item in jsonData track by item.$id" ng-click="link(item.$id, item, $event)" class="node" ng-class="{'text-primary': item.$linked, 'text-success': isLinked(item.$id), 'text-warning': isLinked(item.$id, 2), 'text-danger': isLinked(item.$id, 3)}">
 					<figure ng-switch="item.icon">
-						<img ng-switch-when="icns" ng-src="assets/img/icons/icns/{{ key }}.iconset/icon_128x128@2x.png" width="32" />
-						<img ng-switch-when="svg" ng-src="assets/img/icons/svg/{{ key }}.svg" width="32" />
-						<img ng-switch-when="png" ng-src="assets/img/icons/png/{{ key }}.png" width="32" />
-						<i ng-switch-when="fa" class="fa fa-{{ key }}"></i>
+						<img ng-switch-when="icns" ng-src="assets/img/icons/icns/{{ item.$id }}.iconset/icon_128x128@2x.png" width="32" />
+						<img ng-switch-when="svg" ng-src="assets/img/icons/svg/{{ item.$id }}.svg" width="32" />
+						<img ng-switch-when="png" ng-src="assets/img/icons/png/{{ item.$id }}.png" width="32" />
+						<i ng-switch-when="fa" class="fa fa-{{ item.$id }}"></i>
 						<i ng-switch-default class="{{ item.icon }}"></i>
 					</figure>
 					<span ng-bind="item.name"></span>
@@ -86,6 +86,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.11.0/ui-bootstrap-tpls.min.js"></script>
 	
+	<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 	
 	<script src="//cdn.firebase.com/js/client/2.2.3/firebase.js"></script>
 	<script src="//cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>

@@ -73,3 +73,46 @@ body {
 		}
 	}
 }
+
+// svg
+svg {
+	path {
+		&.arc {
+			//cursor: move;
+			fill: transparent;
+		}
+	}
+	
+	.node {
+		font-size: 10px;
+		
+		&:hover {
+			fill: #1f77b4;
+		}
+		&.target {
+			fill: #d62728 !important;
+		}
+		&.source {
+			fill: #2ca02c;
+		}
+	}
+	
+	.link {
+		fill: none;
+		stroke: #1f77b4;
+		stroke-opacity: .4;
+		pointer-events: none;
+		
+		&.source,
+		&.target {
+			stroke-opacity: 1;
+			stroke-width: 2px;
+		}
+		&.source {
+			stroke: #d62728;
+		}
+		&.target {
+			stroke: #2ca02c;
+		}
+	}
+}
