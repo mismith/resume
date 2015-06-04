@@ -25,7 +25,7 @@ angular.module('XXXXXX', ['ui.bootstrap', 'firebaseHelper'])
 		$firebaseHelperProvider.namespace('mismith-info');
 	}])
 	
-	.controller('AppCtrl', ["$scope", "$firebaseHelper", function($scope, $firebaseHelper){
+	.controller('AppCtrl', ["$scope", "$firebaseHelper", "$q", function($scope, $firebaseHelper, $q){
 		$scope.jsonData = $firebaseHelper.array('nodes'); //.$bindTo($scope, 'jsonData');
 		
 		var packages = {
@@ -74,12 +74,10 @@ angular.module('XXXXXX', ['ui.bootstrap', 'firebaseHelper'])
 		};
 		
 		
-		var w = 1280,
-			h = 800,
+		var w = 600,
+			h = w,
 			rx = w / 2,
-			ry = h / 2,
-			m0,
-			rotate = 0;
+			ry = h / 2;
 		
 		var splines = [];
 		
@@ -89,32 +87,12 @@ angular.module('XXXXXX', ['ui.bootstrap', 'firebaseHelper'])
 		
 		var bundle = d3.layout.bundle();
 		
-		var line = $scope.line = d3.svg.line.radial()
+		$scope.arc = d3.svg.arc().outerRadius(ry - 120).innerRadius(0).startAngle(0).endAngle(2 * Math.PI);
+		$scope.line = d3.svg.line.radial()
 			.interpolate("bundle")
 			.tension(.085)
 			.radius(function(d) { return d.y; })
 			.angle(function(d) { return d.x / 180 * Math.PI; });
-		
-		// Chrome 15 bug: <http://code.google.com/p/chromium/issues/detail?id=98951>
-		var div = d3.select("body").append("div")
-			.style("top", "0")
-			.style("left", "1000px")
-			.style("width", w + "px")
-			.style("height", w + "px")
-			.style("position", "absolute")
-			.style("-webkit-backface-visibility", "hidden");
-		
-		var svg = div
-			.append("svg:svg")
-				.attr("width", w)
-				.attr("height", w)
-			.append("svg:g")
-				.attr("transform", "translate(" + rx + "," + ry + ")");
-		
-		svg.append("svg:path")
-			.attr("class", "arc")
-			.attr("d", d3.svg.arc().outerRadius(ry - 120).innerRadius(0).startAngle(0).endAngle(2 * Math.PI))
-			//.on("mousedown", mousedown);
 		
 		$scope.icon = function(d){
 			var p = 'assets/img/icons/';
@@ -128,70 +106,51 @@ angular.module('XXXXXX', ['ui.bootstrap', 'firebaseHelper'])
 		$scope.jsonData.$loaded(function(classes){
 			classes = angular.copy(classes); // clone so we don't affect the firebase-synced array
 			
-			var nodes = $scope.nodes = cluster.nodes(packages.root(classes)),
-				links = $scope.links = packages.imports(nodes),
-				splines = $scope.splines = bundle(links);
-			
-			var path = svg.selectAll("path.link")
-				.data(links)
-				.enter()
-				.append("svg:path")
-					.attr("class", function(d) { return "link source-" + d.source.$id + " target-" + d.target.$id; })
-					.attr("d", function(d, i) { return line(splines[i]); });
-			
-			var g = svg.selectAll("g.node")
-				.data(nodes.filter(function(n) { return ! n.children; }))
-				.enter()
-				.append("svg:g")
-					.attr("class", "node")
-					.attr("id", function(d) { return "node-" + d.$id; })
-					.attr("transform", function(d) { return "rotate(" + (d.x - 90) + ") translate(" + d.y + ")"; });
-			
-			g.append("svg:image")
-				.attr("width", 32)
-				.attr("height", 32)
-				.attr("y", -16)
-				.attr("transform", function(d) { return d.x < 180 ? null : "rotate(180, 16, 0)"; })
-				.attr("xlink:href", function(d){
-					var p = 'assets/img/icons/';
-					switch(d.icon){
-						case 'icns': p += 'icns/' + d.$id + '.iconset/icon_128x128@2x.png'; break;
-						case 'svg': p += 'svg/' + d.$id + '.svg'; break;
-						case 'png': p += 'png/' + d.$id + '.png'; break;
-					}
-					return p;
-				});
-			g.append("svg:text")
-				.attr("dx", function(d) { return d.x < 180 ? 40 : -40; })
-				.attr("dy", 4)
-				.attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
-				.attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; })
-				.text(function(d) { return d.name; })
-				//.on("mouseover", mouseover)
-				//.on("mouseout", mouseout);
+			// @TODO: set these up as dynamic watchers so that when firebase changes, these are re-init
+			$scope.nodes   = cluster.nodes(packages.root(classes)),
+			$scope.links   = packages.imports($scope.nodes),
+			$scope.splines = bundle($scope.links);
 		});
 		
 		
 		
 		
-		var linksLabel = 'children',
+		var linksLabel = 'links',
 			linked     = $scope.linked = {};
 		
-		$scope.link = function(key, item, event){
+		$scope.link = function(item, event){
+			var key = item.$id;
+			
 			if(linked.key && linked.item){
-				if(key != linked.key){
-					item[linksLabel] = item[linksLabel] || [];
-					var i = item[linksLabel].indexOf(linked.key);
-					if(i < 0) item[linksLabel].push(linked.key); else item[linksLabel].splice(i, 1);
-					
-					linked.item[linksLabel] = linked.item[linksLabel] || [];
-					i = linked.item[linksLabel].indexOf(key);
-					if(i < 0) linked.item[linksLabel].push(key); else linked.item[linksLabel].splice(i, 1);
+				var unlink = function(){
+					if( ! event || ! event.shiftKey){
+						// un/re-set
+						delete linked.item.$linked;
+						linked = $scope.linked = {};
+					}
 				}
-				if( ! event || ! event.shiftKey){
-					// un/re-set
-					delete linked.item.$linked;
-					linked = $scope.linked = {};
+				if(key != linked.key){
+					var source = $firebaseHelper.object('nodes', linked.key),
+						target = $firebaseHelper.object('nodes', key);
+					
+					$q.all([source.$loaded(), target.$loaded()]).then(function(d){
+						// make the changes locally
+						source[linksLabel] = source[linksLabel] || [];
+						var i = source[linksLabel].indexOf(key);
+						if(i < 0) source[linksLabel].push(key); else source[linksLabel].splice(i, 1);
+						
+						target[linksLabel] = target[linksLabel] || [];
+						i = target[linksLabel].indexOf(linked.key);
+						if(i < 0) target[linksLabel].push(linked.key); else target[linksLabel].splice(i, 1);
+						
+						// save the changes
+						source.$save();
+						target.$save();
+					}).finally(function(){
+						unlink();
+					});
+				}else{
+					unlink();
 				}
 			}else{
 				item.$linked = true;
@@ -200,6 +159,7 @@ angular.module('XXXXXX', ['ui.bootstrap', 'firebaseHelper'])
 				linked.item = item;
 			}
 		};
+/*
 		$scope.linkedKeys = function(key, depth){
 			depth = depth || 1;
 			
@@ -229,4 +189,5 @@ angular.module('XXXXXX', ['ui.bootstrap', 'firebaseHelper'])
 		$scope.isLinked = function(key, depth){
 			return linked.key ? ($scope.linkedKeys(linked.key, depth).indexOf(key) >= 0) : false;
 		};
+*/
 	}]);

@@ -65,19 +65,16 @@
 	
 	<div id="app" class="grid-columns">
 		<div>
-			<ul class="nodes" ng-class="{linking: linked.key}">
-				<li ng-repeat="item in jsonData track by item.$id" ng-click="link(item.$id, item, $event)" class="node" ng-class="{'text-primary': item.$linked, 'text-success': isLinked(item.$id), 'text-warning': isLinked(item.$id, 2), 'text-danger': isLinked(item.$id, 3)}">
-					<figure ng-switch="item.icon">
-						<img ng-switch-when="icns" ng-src="assets/img/icons/icns/{{ item.$id }}.iconset/icon_128x128@2x.png" width="32" />
-						<img ng-switch-when="svg" ng-src="assets/img/icons/svg/{{ item.$id }}.svg" width="32" />
-						<img ng-switch-when="png" ng-src="assets/img/icons/png/{{ item.$id }}.png" width="32" />
-						<i ng-switch-when="fa" class="fa fa-{{ item.$id }}"></i>
-						<i ng-switch-default class="{{ item.icon }}"></i>
-					</figure>
-					<span ng-bind="item.name"></span>
-					<a ng-if="item.url" ng-href="{{ item.url }}" target="_blank"><!-- <span ng-if="item.user" ng-bind="item.user"></span>  --><i class="fa fa-chevron-circle-right"></i></a>
-				</li>
-			</ul>
+			<svg width="600" height="600">
+				<g transform="translate(300, 300)">
+					<path ng-attr-d="{{ arc() }}" class="arc" />
+					<path ng-repeat="link in links" ng-attr-d="{{ line(splines[$index]) }}" class="link source-{{ link.source.$id }} target-{{ link.target.$id }}" />
+					<g ng-repeat="node in nodes" ng-click="link(node, $event)" ng-attr-transform="{{ 'rotate(' + (node.x - 90) + ') translate(' + node.y + ')' }}" id="node-{{ node.$id }}" class="node">
+						<image width="32" height="32" x="0" y="-16" ng-attr-transform="{{ node.x < 180 ? null : 'rotate(180, 16, 0)' }}" ng-attr-xlink:href="{{ icon(node) }}" xlink:href="" />
+						<text ng-attr-dx="{{ node.x < 180 ? 40 : -40 }}" dy="4" ng-attr-text-anchor="{{ node.x < 180 ? 'start' : 'end' }}" ng-attr-transform="{{ node.x < 180 ? null : 'rotate(180)' }}" ng-bind="node.name"></text>
+					</g>
+				</g>
+			</svg>
 		</div>
 		<pre ng-bind="jsonData | json"></pre>
 	</div>
