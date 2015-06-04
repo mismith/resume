@@ -2,6 +2,8 @@
 @import url("var.inc.less");
 @import url("glyph.inc.less");
 
+@primary: #0C0;
+
 // tags
 body {
 	background: @lightest;
@@ -11,6 +13,8 @@ body {
 
 // svg
 svg {
+	user-select: none;
+	
 	path {
 		&.arc {
 			//cursor: move;
@@ -19,16 +23,24 @@ svg {
 	}
 	
 	.node {
-		font-size: 10px;
+		font-size: 12px;
+		cursor: default;
 		
-		&:hover {
-			fill: #1f77b4;
+		a {
+			text-decoration: none;
+			
+			&:hover {
+				fill: @primary;
+			}
 		}
-		&.target {
-			fill: #d62728 !important;
+		&:hover {
+			//fill: #1f77b4;
 		}
 		&.source {
 			fill: #2ca02c;
+		}
+		&.target {
+			fill: #d62728;
 		}
 	}
 	
@@ -52,10 +64,8 @@ svg {
 	}
 	
 	&.linking {
-		user-select: none;
-		
 		.node {
-			color: black !important;
+			color: @darkest;
 			opacity: .5;
 			cursor: crosshair;
 			

@@ -20,13 +20,28 @@ angular.module('XXXXXX', ['ui.bootstrap', 'firebaseHelper'])
 		};
 	})
 	
-	.config(function($firebaseHelperProvider){
+	.config(function($sceProvider, $firebaseHelperProvider){
+		// we don't need security rules
+		$sceProvider.enabled(false);
+		
 		// data
 		$firebaseHelperProvider.namespace('mismith-info');
 	})
 	
-	.controller('AppCtrl', function($scope, $firebaseHelper, $q){
+	.controller('AppCtrl', function($scope, $firebaseHelper, $sce){
+		$scope.auth = $firebaseHelper.auth();
+		$scope.auth.$onAuth(function(authData){
+			if(authData){
+				$scope.authed = authData;
+				console.log('login', authData);
+			}else{
+				$scope.authed = null;
+				console.log('logout');
+			}
+		});
+		
 		$scope.jsonData = $firebaseHelper.array('nodes'); //.$bindTo($scope, 'jsonData');
+		
 		
 		var packages = {
 			// Lazily construct the package hierarchy from class names.
@@ -74,7 +89,7 @@ angular.module('XXXXXX', ['ui.bootstrap', 'firebaseHelper'])
 		};
 		
 		
-		var w = 600,
+		var w = 800,
 			h = w,
 			rx = w / 2,
 			ry = h / 2;
@@ -83,13 +98,13 @@ angular.module('XXXXXX', ['ui.bootstrap', 'firebaseHelper'])
 		
 		var cluster = d3.layout.cluster()
 			.size([360, ry - 120])
-			.sort(function(a, b) { return d3.ascending(a.$id, b.$id); });
+			.sort(function(a, b) { return d3.ascending(a.name.toLowerCase(), b.name.toLowerCase()); });
 		
 		var bundle = d3.layout.bundle();
 		
 		$scope.arc = d3.svg.arc().outerRadius(ry - 120).innerRadius(0).startAngle(0).endAngle(2 * Math.PI);
 		$scope.line = d3.svg.line.radial()
-			.interpolate("bundle")
+			.interpolate('bundle')
 			.tension(.5)
 			.radius(function(d) { return d.y; })
 			.angle(function(d) { return d.x / 180 * Math.PI; });
@@ -103,11 +118,15 @@ angular.module('XXXXXX', ['ui.bootstrap', 'firebaseHelper'])
 			}
 			return p;
 		};
+		$scope.url = function(d){
+			return d.url;
+		};
 		function init(){
 			$scope.jsonData.$loaded(function(nodes){
 				nodes = angular.copy(nodes); // clone so we don't affect the firebase-synced array
 				
 				$scope.nodes   = cluster.nodes(packages.root(nodes));
+				//console.log($scope.nodes);
 				$scope.links   = packages.imports($scope.nodes);
 				$scope.splines = bundle($scope.links);
 			});
@@ -128,7 +147,7 @@ angular.module('XXXXXX', ['ui.bootstrap', 'firebaseHelper'])
 					if( ! event || ! event.shiftKey){
 						// un/re-set
 						delete linked.item.$linking;
-						linked = $scope.linked = {};
+						linked.key = linked.item = null;
 					}
 				}
 				if(key != linked.key){
@@ -141,7 +160,9 @@ angular.module('XXXXXX', ['ui.bootstrap', 'firebaseHelper'])
 						if(i < 0) source[linksLabel].push(key); else source[linksLabel].splice(i, 1);
 						
 						// save the changes	
-						source.$save().then(init);
+						source.$save().then(init).catch(function(err){
+							alert(err.code);
+						});
 					}).finally(function(){
 						unlink();
 					});
@@ -150,7 +171,6 @@ angular.module('XXXXXX', ['ui.bootstrap', 'firebaseHelper'])
 				}
 			}else{
 				item.$linking = true;
-				
 				linked.key  = key;
 				linked.item = item;
 			}
