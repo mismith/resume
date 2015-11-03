@@ -3,33 +3,30 @@ var gulp         = require('gulp'),
 
 	// build
 	fs           = require('fs'),
-	merge        = require('merge');
+	merge        = require('merge'),
 
 	// utility
 	gutil        = require('gulp-util'),
 	argv         = require('yargs').argv,
-	rename       = require('gulp-rename'),
-	notifier     = require('node-notifier'),
-	
+
 	// watching
 	browserSync  = require('browser-sync'),
-	
-	// linting
-	htmlhint     = require('gulp-htmlhint'),
-		
+
 	// js
 	concat       = require('gulp-concat'),
+	rename       = require('gulp-rename'),
+	babel        = require('gulp-babel'),
 	uglify       = require('gulp-uglify'),
 	jsValidate   = require('gulp-jsvalidate'),
 	ngAnnotate   = require('gulp-ng-annotate'),
-	
+
 	// css
 	less         = require('gulp-less'),
 	autoprefixer = require('gulp-autoprefixer'),
 	minifyCss    = require('gulp-minify-css');
 
-
 // config
+var basePath = '/';
 var defaults = {
 	autoprefixer: 'last 2 versions',
 	htmlhint: {
@@ -41,11 +38,21 @@ var defaults = {
 		"attr-unsafe-chars": true,
 		"space-tab-mixed-disabled": true,
 	},
+	manifest: {
+		basePath: __dirname.replace(/[^\w\s]/g, "\\$&"),
+		filename: 'cache.manifest',
+		exclude: 'cache.manifest',
+		preferOnline: true,
+		hash: true,
+	},
 	browsersync: {
+		ui: false,
 		watchOptions: {debounce: 400},
+		reloadDebounce: 400,
 		notify: false,
-		server: { 
-			baseDir: './',
+		server: {
+			baseDir: './' + basePath,
+			middleware: [ require('connect-history-api-fallback')() ],
 		},
 		//proxy: 'example.dev',
 	},
@@ -54,89 +61,114 @@ var defaults = {
 	},
 	globs: {
 		excludes: [
-			'!**/node_modules/**/*',
-			'!**/vendor/**/*',
-			'!**/wp/**/*',
+			'!node_modules/**/*',
+			'!vendor/**/*',
+			'!wp/**/*',
 		],
 		html: [
-			'**/*.{html,htm,php}',
+			basePath + '**/*.{html,htm,php}',
 		],
 		js: [
-			'assets/scripts/*/**/*.js', // subfolders first
-			'assets/scripts/**/*.js',
+			basePath + 'assets/scripts/*/**/*.js', // subfolders first
+			basePath + 'assets/scripts/**/*.js',
 		],
 		less: [
-			'assets/styles/**/*.less',
+			basePath + 'assets/styles/**/*.less',
 			// note that files ending in ".inc.less" will not be compiled (but they will be watched)
 		],
 		files: [
-			'**/*.{htaccess,jpg,jpeg,gif,png,svg}',
+			basePath + '**/*.{htaccess,jpg,jpeg,gif,png,svg}',
+		],
+		manifest: [
+			basePath + 'assets/js/*',
+			basePath + 'assets/css/*',
+			basePath + 'assets/fonts/*',
+			basePath + 'assets/webfonts/*',
+			basePath + 'assets/img/*.{jpg,jpeg,gif,png,svg}',
+			basePath + 'assets/**/*.{mp3,mp4,m4a,m4v,wav,flv,ogg,ogv,webm}',
+			basePath + '**/*.{html,htm,php}',
 		],
 	},
 	dests: {
-		js:   'assets/js',
-		less: 'assets/css',
+		scripts: basePath + 'assets/js',
+		styles:  basePath + 'assets/css',
 	}
 };
-var gulpconfig = './gulpconfig.js';
-var config = merge.recursive(defaults, fs.existsSync(gulpconfig) ? require(gulpconfig) : {});
+var configPath = './gulpfile.config.js',
+	config     = merge.recursive(defaults, fs.existsSync(configPath) ? require(configPath) : {});
 
 
 // tasks
 gulp
 	// build
 	.task('html', function(){
-		gulp.src(config.globs.html.concat(config.globs.excludes))
-			
+		return gulp.src(config.globs.excludes.concat(config.globs.html))
 			.pipe(browserSync.reload({stream: true}));
 	})
+	.task('rev', function(){
+		return gulp.src(config.globs.excludes.concat(config.globs.html))
+			.pipe(require('gulp-rev-append')())
+			.pipe(gulp.dest(basePath || '.'))
+	})
 	.task('js', function(){
-		gulp.src(config.globs.js.concat(config.globs.excludes))
-			.pipe(jsValidate()).on('error', handleError)
-			.pipe(ngAnnotate()).on('error', handleError)
+		return gulp.src(config.globs.excludes.concat(config.globs.js))
+			.pipe(jsValidate(config.jsValidate)).on('error', handleError)
+			.pipe(babel(config.babel)).on('error', handleError)
+			.pipe(ngAnnotate(config.ngAnnotate)).on('error', handleError)
 			.pipe(concat(config.concat.js + '.js'))
-			.pipe(gulp.dest(config.dests.js))
+			.pipe(gulp.dest(config.dests.scripts))
 			
 			.pipe(rename({suffix: '.min'}))
-			.pipe(uglify()).on('error', handleError)
-			.pipe(gulp.dest(config.dests.js))
+			.pipe(uglify(config.uglify)).on('error', handleError)
+			.pipe(gulp.dest(config.dests.scripts))
 			
 			.pipe(browserSync.reload({stream: true}));
 	})
 	.task('less', function(){
-		gulp.src(config.globs.less.concat(config.globs.excludes).concat('!**/*.inc.less')) // don't output .inc.less files as they are never accessed directly
-			.pipe(less()).on('error', handleError)
+		return gulp.src(config.globs.excludes.concat(config.globs.less).concat('!**/*.inc.less')) // don't output .inc.less files as they are never accessed directly
+			.pipe(less(config.less)).on('error', handleError)
 			.pipe(autoprefixer(config.autoprefixer))
-			.pipe(minifyCss())
-			.pipe(gulp.dest(config.dests.less))
+			.pipe(gulp.dest(config.dests.styles))
+			
+			.pipe(rename({suffix: '.min'}))
+			.pipe(minifyCss(config.minifyCss))
+			.pipe(gulp.dest(config.dests.styles))
 			
 			.pipe(browserSync.reload({stream: true}));
 	})
-	.task('build', ['html','js','less'])
-	
+	.task('manifest', function(){
+		return gulp.src(config.globs.excludes.concat(config.globs.manifest))
+			.pipe(require('gulp-manifest')(config.manifest))
+			.pipe(gulp.dest('.'));
+	})
+	.task('build', ['html','rev','js','less','manifest'])
 	
 	// lint
 	.task('html.lint', function(){
-		gulp.src(config.globs.html.concat(config.globs.excludes))
-			.pipe(htmlhint(config.htmlhint))
+		return gulp.src(config.globs.excludes.concat(config.globs.html))
+			.pipe(require('gulp-htmlhint')(config.htmlhint))
 			.pipe(htmlhint.reporter());
 	})
+	.task('lint', ['html.lint'])
+	
 	// watch
 	.task('html.watch', function(){
-		gulp.watch(config.globs.html.concat(config.globs.excludes), ['html']);
+		return gulp.watch(config.globs.excludes.concat(config.globs.html), ['html']);
 	})
 	.task('js.watch', function(){
-		gulp.watch(config.globs.js.concat(config.globs.excludes), ['js']);
+		return gulp.watch(config.globs.excludes.concat(config.globs.js), ['js']);
 	})
 	.task('less.watch', function(){
-		gulp.watch(config.globs.less.concat(config.globs.excludes), ['less']);
+		return gulp.watch(config.globs.excludes.concat(config.globs.less), ['less']);
 	})
 	.task('watch', ['html.watch','js.watch','less.watch'], function(){
-		browserSync.init(merge.recursive(config.browsersync || {}, {
-			files: config.globs.files.concat(config.globs.excludes),
-			ghostMode: argv.g || gutil.env.ghost, // call `gulp -g` or `gulp --ghost` to start in ghostMode
-			open: ! argv.s && ! gutil.env.silent, // call `gulp -s` or `gulp --silent` to start gulp without opening a new browser window
-		}));
+		var options = merge.recursive(config.browsersync || {}, {
+			files:     config.globs.excludes.concat(config.globs.files),
+			ghostMode: !! (argv.g || gutil.env.ghost), // call `gulp -g` or `gulp --ghost` to start in ghostMode
+			open:      ! (argv.s || gutil.env.silent), // call `gulp -s` or `gulp --silent` to start gulp without opening a new browser window
+		});
+		if (options.proxy) delete options.server; // prefer proxy to server
+		browserSync.init(options);
 	})
 	
 	
@@ -156,7 +188,7 @@ var handleError = function(error, type){
 	
 	// show an OS-level notification to make sure we catch our attention
 	// (do this before we format things since it can't handle the formatting)
-	notifier.notify({
+	require('node-notifier').notify({
 		title: 'ERROR(' + error.plugin + ')',
 		subtitle: fileName,
 		message: error.message,
