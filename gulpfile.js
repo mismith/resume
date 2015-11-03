@@ -26,7 +26,7 @@ var gulp         = require('gulp'),
 	minifyCss    = require('gulp-minify-css');
 
 // config
-var basePath = '/';
+var basePath = '';
 var defaults = {
 	autoprefixer: 'last 2 versions',
 	htmlhint: {

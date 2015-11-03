@@ -1,4 +1,17 @@
-@primary: #0C0;
+@import "boilerplate.inc.less";
+
+@red:     #d62728;
+@green:   #2ca02c;
+
+// classes
+.list-unstyled {
+	&, > * {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+}
+
 
 // tags
 body {
@@ -7,8 +20,12 @@ body {
 	font: 300 16px/20px @font;
 }
 
+
 // svg
-svg {
+.svg-container {
+	position: relative;
+	width: 800px;
+	height: 800px;
 	user-select: none;
 	
 	path {
@@ -18,25 +35,51 @@ svg {
 		}
 	}
 	
+	.flip180 {
+		display: inline-block;
+		transform: rotate(180deg);
+	}
+	ul {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		
+		transform: translate3d(50%, 50%, 0);
+		perspective: 1000px;
+		perspective-origin: 0 0;
+		backface-visibility: hidden;
+		
+		> * {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
 	.node {
 		font-size: 12px;
+		transform-origin: 0 0;
 		cursor: default;
 		
-		a {
-			text-decoration: none;
+		.node-contents {
+			transform: translateZ(0);
+			//transform-origin: center center;
+			transition: all @t ease-in-out;
 			
-			&:hover {
-				fill: @primary;
+			a {
+				text-decoration: none;
+				
+				&:hover {
+					fill: @green;
+				}
 			}
 		}
-		&:hover {
-			//fill: #1f77b4;
-		}
 		&.source {
-			fill: #2ca02c;
+			fill: @green;
 		}
 		&.target {
-			fill: #d62728;
+			fill: @red;
 		}
 	}
 	
@@ -52,10 +95,10 @@ svg {
 			stroke-width: 2px;
 		}
 		&.source {
-			stroke: #d62728;
+			stroke: @red;
 		}
 		&.target {
-			stroke: #2ca02c;
+			stroke: @green;
 		}
 	}
 	
@@ -65,9 +108,20 @@ svg {
 			opacity: .5;
 			cursor: crosshair;
 			
+			.node-contents {
+				transform: scale(.67);
+				transform-origin: left center;
+			}
+			
 			&:hover,
-			&.linking {
+			&.linking,
+			&.source,
+			&.target {
 				opacity: 1;
+				
+				.node-contents {
+					transform: scale(1);
+				}
 			}
 		}
 	}
