@@ -65,19 +65,25 @@
 	
 	<div id="app" class="grid-columns">
 		<div>
-			<svg width="800" height="800" ng-class="{linking: linked.key}">
-				<g transform="translate(400, 400)">
-					<path ng-attr-d="{{ arc() }}" class="arc" />
-					<path ng-repeat="link in links" ng-attr-d="{{ line(splines[$index]) }}" class="link" ng-class="{source: link.source.$id == linked.key, target: link.target.$id == linked.key}" />
-					<g ng-repeat="node in nodes track by node.$id" ng-if="node.name" ng-click="authed ? link(node, $event) : null" ng-mouseenter="authed ? null : linked.key = node.$id; authed ? null : linked.item = node" ng-mouseleave="authed ? null : linked.key = null; authed ? null : linked.item = null" ng-attr-transform="{{ 'rotate(' + (node.x - 90) + ') translate(' + node.y + ')' }}" id="node-{{ node.$id }}" class="node" ng-class="{linking: node.$linking, source: linked.key && node.links.indexOf(linked.key) >= 0, target: linked.item && linked.item.links.indexOf(node.$id) >= 0}">
-						<image width="32" height="32" x="0" y="-16" ng-attr-transform="{{ node.x < 180 ? null : 'rotate(180, 16, 0)' }}" ng-attr-xlink:href="{{ icon(node) }}" xlink:href="" />
-						<text ng-attr-dx="{{ node.x < 180 ? 40 : -40 }}" dy="4" ng-attr-text-anchor="{{ node.x < 180 ? 'start' : 'end' }}" ng-attr-transform="{{ node.x < 180 ? null : 'rotate(180)' }}">
-							{{ node.name }}
-							<a ng-if="node.url" ng-attr-xlink:href="{{ url(node) }}" xlink:href="" target="_blank" class="fa fa-check">&#xf138;</a>
-						</text>
+			<div class="svg-container" ng-class="{linking: linked.key}">
+				<svg width="800" height="800">
+					<g transform="translate(400, 400)">
+						<path ng-attr-d="{{ arc() }}" class="arc" />
+						<path ng-repeat="link in links" ng-attr-d="{{ line(splines[$index]) }}" class="link" ng-class="{source: link.source.$id == linked.key, target: link.target.$id == linked.key}" />
 					</g>
-				</g>
-			</svg>
+				</svg>
+				<ul class="list-unstyled">
+					<li ng-repeat="node in nodes track by node.$id" ng-if="node.name" ng-click="authed ? link(node, $event) : null" ng-mouseenter="authed ? null : linked.key = node.$id; authed ? null : linked.item = node" ng-mouseleave="authed ? null : linked.key = null; authed ? null : linked.item = null" id="node-{{ node.$id }}" class="node" ng-class="{linking: node.$linking, source: linked.key && node.links.indexOf(linked.key) >= 0, target: linked.item && linked.item.links.indexOf(node.$id) >= 0}" ng-style="{transform: 'rotate(' + (node.x - 90 -3) + 'deg) translate(' + node.y + 'px)'}">
+						<div class="node-contents">
+							<img ng-src="{{ icon(node) }}" width="32" height="32" ng-class="{flip180: node.x >= 180}" />
+							<span ng-attr-text-anchor="{{ node.x < 180 ? 'start' : 'end' }}" ng-class="{flip180: node.x >= 180}">
+								<span ng-bind="node.name"></span>
+								<a ng-href="{{ url(node) }}" ng-if="node.url" target="_blank" class="fa fa-chevron-circle-right"></a>
+							</span>
+						</div>
+					</li>
+				</ul>
+			</div>
 			<button ng-click="authed ? auth.$unauth() : auth.$authWithOAuthPopup('facebook')" class="btn passthru"><i class="fa" ng-class="{'fa-pencil': ! authed, 'fa-check': authed}"></i></button>
 		</div>
 		<pre ng-bind="jsonData | json"></pre>
