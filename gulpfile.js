@@ -1,169 +1,228 @@
+// localized config
+var srcPath   = 'src/',
+	destPath  = 'html/',
+	overrides = {
+		// browsersync: {
+		// 	proxy: 'example.dev',
+		// },
+	};
+
+
 // includes
-var gulp         = require('gulp'),
-
-	// build
-	fs           = require('fs'),
-	merge        = require('merge');
-
-	// utility
-	gutil        = require('gulp-util'),
-	argv         = require('yargs').argv,
-	rename       = require('gulp-rename'),
-	notifier     = require('node-notifier'),
-	
-	// watching
-	browserSync  = require('browser-sync'),
-	
-	// linting
-	htmlhint     = require('gulp-htmlhint'),
-		
-	// js
-	concat       = require('gulp-concat'),
-	uglify       = require('gulp-uglify'),
-	jsValidate   = require('gulp-jsvalidate'),
-	ngAnnotate   = require('gulp-ng-annotate'),
-	
-	// css
-	less         = require('gulp-less'),
-	autoprefixer = require('gulp-autoprefixer'),
-	minifyCss    = require('gulp-minify-css');
+var gulp        = require('gulp'),
+	_           = require('lodash'),
+	argv        = require('yargs').argv,
+	gutil       = require('gulp-util'),
+	rename      = require('gulp-rename'),
+	browserSync = require('browser-sync');
 
 
 // config
-var defaults = {
-	autoprefixer: 'last 2 versions',
-	htmlhint: {
-		"doctype-first": false,
-		"spec-char-escape": false,
-		"attr-lowercase": false,
-		"tagname-lowercase": false,
-		"img-alt-require": true,
-		"attr-unsafe-chars": true,
-		"space-tab-mixed-disabled": true,
-	},
-	browsersync: {
-		watchOptions: {debounce: 400},
-		notify: false,
-		server: { 
-			baseDir: './',
-		},
-		//proxy: 'example.dev',
-	},
-	concat: {
-		js: 'base',
-	},
-	globs: {
-		excludes: [
-			'!**/node_modules/**/*',
-			'!**/vendor/**/*',
-			'!**/wp/**/*',
-		],
-		html: [
-			'**/*.{html,htm,php}',
-		],
-		js: [
-			'assets/scripts/*/**/*.js', // subfolders first
-			'assets/scripts/**/*.js',
-		],
-		less: [
-			'assets/styles/**/*.less',
-			// note that files ending in ".inc.less" will not be compiled (but they will be watched)
-		],
+var config = _.merge({
+	// paths
+	srcs: {
 		files: [
-			'**/*.{htaccess,jpg,jpeg,gif,png,svg}',
+			srcPath + '**/*',
+			'!' + srcPath + '**/*.{DS_Store,gitkeep}',
+			'!' + srcPath + 'assets/{scripts,styles,images,icons}{,/**}', // ignore special folders
+		],
+		scripts: [
+			srcPath + 'assets/scripts/*/**/*.js', // subfolders first
+			srcPath + 'assets/scripts/**/*.js',
+		],
+		styles: [
+			srcPath + 'assets/styles/**/*.{css,scss}',
+		],
+		images: [
+			srcPath + 'assets/images/**/*.{png,jpeg,jpg,gif,svg}',
+		],
+		icons: [
+			srcPath + 'assets/icons/**/*.svg',
 		],
 	},
 	dests: {
-		js:   'assets/js',
-		less: 'assets/css',
-	}
-};
-var gulpconfig = './gulpconfig.js';
-var config = merge.recursive(defaults, fs.existsSync(gulpconfig) ? require(gulpconfig) : {});
+		files:   destPath,
+		scripts: destPath + 'assets/js',
+		styles:  destPath + 'assets/css',
+		images:  destPath + 'assets/img',
+		icons:   destPath + 'assets',
+	},
+
+	// plugins
+	babel: {
+		presets: ['es2015'],
+	},
+	imagemin: {
+		progressive: true,
+		interlaced: true,
+		multipass: true,
+	},
+	svgSprite: {
+		mode: {
+			symbol: {
+				dest: '.',
+				sprite: 'icons.svg',
+			},
+		},
+	},
+	autoprefixer: {
+		browsers: ['last 2 versions'],
+	},
+	browsersync: {
+		ui: false,
+		notify: false,
+		reloadDebounce: 400,
+		watchOptions: {debounce: 400},
+		server: {
+			baseDir: './' + destPath,
+		},
+	},
+	nodemon: {
+		ignore: [
+			srcPath,
+			destPath,
+		],
+	},
+}, overrides);
 
 
 // tasks
 gulp
 	// build
-	.task('html', function(){
-		gulp.src(config.globs.html.concat(config.globs.excludes))
-			
+	.task('files', function () {
+		return gulp.src(config.srcs.files, {dot: true})
+			// .pipe(require('gulp-rev-append')()) // @TODO: not working
+			.pipe(gulp.dest(config.dests.files))
+
 			.pipe(browserSync.reload({stream: true}));
 	})
-	.task('js', function(){
-		gulp.src(config.globs.js.concat(config.globs.excludes))
-			.pipe(jsValidate()).on('error', handleError)
-			.pipe(ngAnnotate()).on('error', handleError)
-			.pipe(concat(config.concat.js + '.js'))
-			.pipe(gulp.dest(config.dests.js))
-			
+	.task('scripts', function () {
+		return gulp.src(config.srcs.scripts)
+			.pipe(require('gulp-babel')(config.babel)).on('error', handleError)
+			.pipe(require('gulp-ng-annotate')(config.ngAnnotate)).on('error', handleError)
+			.pipe(require('gulp-concat')('main.js'))
+			.pipe(gulp.dest(config.dests.scripts))
+
 			.pipe(rename({suffix: '.min'}))
-			.pipe(uglify()).on('error', handleError)
-			.pipe(gulp.dest(config.dests.js))
-			
+			.pipe(require('gulp-uglify')(config.uglify)).on('error', handleError)
+			.pipe(gulp.dest(config.dests.scripts))
+
 			.pipe(browserSync.reload({stream: true}));
 	})
-	.task('less', function(){
-		gulp.src(config.globs.less.concat(config.globs.excludes).concat('!**/*.inc.less')) // don't output .inc.less files as they are never accessed directly
-			.pipe(less()).on('error', handleError)
-			.pipe(autoprefixer(config.autoprefixer))
-			.pipe(minifyCss())
-			.pipe(gulp.dest(config.dests.less))
-			
+	.task('styles', function () {
+		var postcss = require('gulp-postcss');
+		return gulp.src(config.srcs.styles)
+			.pipe(require('gulp-sass')(config.sass)).on('error', handleError)
+			.pipe(postcss([
+				require('autoprefixer')(config.autoprefixer)
+			])).on('error', handleError)
+			.pipe(gulp.dest(config.dests.styles))
+
+			.pipe(rename({suffix: '.min'}))
+			.pipe(postcss([
+				require('cssnano')(config.cssnano)
+			])).on('error', handleError)
+			.pipe(gulp.dest(config.dests.styles))
+
 			.pipe(browserSync.reload({stream: true}));
 	})
-	.task('build', ['html','js','less'])
-	
-	
-	// lint
-	.task('html.lint', function(){
-		gulp.src(config.globs.html.concat(config.globs.excludes))
-			.pipe(htmlhint(config.htmlhint))
-			.pipe(htmlhint.reporter());
+	.task('images', function () {
+		return gulp.src(config.srcs.images)
+			.pipe(require('gulp-imagemin')(config.imagemin)).on('error', handleError)
+
+			.pipe(gulp.dest(config.dests.images))
+
+			.pipe(browserSync.reload({stream: true}));
 	})
+	.task('icons', function () {
+		return gulp.src(config.srcs.icons)
+			.pipe(require('gulp-svg-sprite')(config.svgSprite)).on('error', handleError)
+
+			.pipe(gulp.dest(config.dests.icons))
+
+			.pipe(browserSync.reload({stream: true}));
+	})
+	.task('build', ['files', 'scripts', 'styles', 'images', 'icons'])
+	.task('clean', function () {
+		return gulp.src(destPath, {read: false})
+			.pipe(require('gulp-clean')());
+	})
+
 	// watch
-	.task('html.watch', function(){
-		gulp.watch(config.globs.html.concat(config.globs.excludes), ['html']);
+	.task('files.watch', ['files'], function () {
+		return gulp.watch(config.srcs.files, ['files']);
 	})
-	.task('js.watch', function(){
-		gulp.watch(config.globs.js.concat(config.globs.excludes), ['js']);
+	.task('scripts.watch', ['scripts'], function () {
+		return gulp.watch(config.srcs.scripts, ['scripts']);
 	})
-	.task('less.watch', function(){
-		gulp.watch(config.globs.less.concat(config.globs.excludes), ['less']);
+	.task('styles.watch', ['styles'], function () {
+		return gulp.watch(config.srcs.styles, ['styles']);
 	})
-	.task('watch', ['html.watch','js.watch','less.watch'], function(){
-		browserSync.init(merge.recursive(config.browsersync || {}, {
-			files: config.globs.files.concat(config.globs.excludes),
-			ghostMode: argv.g || gutil.env.ghost, // call `gulp -g` or `gulp --ghost` to start in ghostMode
-			open: ! argv.s && ! gutil.env.silent, // call `gulp -s` or `gulp --silent` to start gulp without opening a new browser window
-		}));
+	.task('images.watch', ['images'], function () {
+		return gulp.watch(config.srcs.images, ['images']);
 	})
-	
-	
+	.task('icons.watch', ['icons'], function () {
+		return gulp.watch(config.srcs.icons, ['icons']);
+	})
+	.task('watch', ['files.watch', 'scripts.watch', 'styles.watch', 'images.watch', 'icons.watch'], function () {
+		var options = _.merge(config.browsersync || {}, {
+			// call `gulp -g` or `gulp --ghost` to start in ghostMode
+			ghostMode: !! (argv.g || gutil.env.ghost),
+
+			// call `gulp -s` or `gulp --silent` to start gulp without opening a new browser window
+			open: ! (argv.s || gutil.env.silent),
+		});
+		options.proxy = options.proxy || argv.p || gutil.env.proxy;
+		if (options.proxy) {
+			// prefer proxy to server
+			delete options.server;
+
+			if (options.proxy === true) options.proxy = 'http://localhost:3030';
+		} else if (options.server) {
+			delete options.proxy;
+			// direct all requests to index.html
+			// (since we're launching a node server, .htaccess files won't work)
+			options.server.middleware = options.server.middleware || [];
+			options.server.middleware.push(require('connect-history-api-fallback')());
+		}
+		browserSync.init(options);
+	})
+
+	// node
+	.task('nodemon', function () {
+		require('gulp-nodemon')(config.nodemon)
+			.on('start', function () {
+				config.browsersync = config.browsersync || {};
+				config.browsersync.proxy = true;
+
+				gulp.start('watch'); // @HACK?
+			});
+	})
+
 	// default
 	.task('default', ['watch']);
 
 
 // error handling
-var handleError = function(error, type){
+function handleError(error, type){
 	//console.log(error);
-	
+
 	// remove any leading error marker
 	error.message = error.message.replace(/^error:\s*/i, '');
-	
+
 	// shorten fileName
 	var fileName = error.fileName ? error.fileName.replace(__dirname, '') : '';
-	
+
 	// show an OS-level notification to make sure we catch our attention
 	// (do this before we format things since it can't handle the formatting)
-	notifier.notify({
+	require('node-notifier').notify({
 		title: 'ERROR(' + error.plugin + ')',
 		subtitle: fileName,
 		message: error.message,
 		sound: 'Basso',
 		activate: 'com.apple.Terminal',
 	});
-	
+
 	// colour the problematic line for higher visibility
 	if(error.extract){
 		var middleIndex = Math.floor(error.extract.length / 2);
@@ -179,25 +238,25 @@ var handleError = function(error, type){
 	}
 	// process line numbers
 	var line = error.lineNumber || error.line;
-	
+
 	// output the formatted error
 	gutil.log(
 		// error and plugin
 		gutil.colors.red('ERROR(' + error.plugin + '): ') +
-		
+
 		// message
 		error.message +
-		
+
 		// offending line number and column
 		(line ? ' [' + gutil.colors.cyan(line) + ':' + gutil.colors.cyan(error.column) + ']' : '') +
-		
+
 		// preview the offending code
 		(error.extract ? '\n\n\t' + error.extract.join('\n\t') : '') +
-		
+
 		// finish with a new line
 		'\n'
 	);
-	
+
 	// prevent this error from breaking/stopping watchers
 	this.emit('end');
 };

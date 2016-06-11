@@ -1,0 +1,406 @@
+{
+	"info": {
+		"name": "Murray Smith",
+		"address": "4512 4A ST SW, Calgary, AB, T2S 2A1",
+		"phone": "4038303897",
+		"email": "murray@mismith.info",
+		"description": "I'm a percolative propellorhead and curious, focused problem-solver. My talent is learning, and my passion is building web applications and tools.",
+		"url": "http://mismith.info",
+		"image": "https://avatars.io/gravatar/murray@mismith.info/medium"
+	},
+	"social": [
+		{
+			"name": "Facebook",
+			"url": "https://www.facebook.com/mismith"
+		},
+		{
+			"name": "Github",
+			"url": "https://github.com/mismith",
+			"priority": 1
+		},
+		{
+			"name": "Instagram",
+			"url": "https://instagram.com/_mismith/"
+		},
+		{
+			"name": "Last.fm",
+			"url": "http://www.last.fm/user/cinesmith"
+		},
+		{
+			"name": "LinkedIn",
+			"url": "https://www.linkedin.com/in/murrayiainsmith"
+		},
+		{
+			"name": "Quora",
+			"url": "http://www.quora.com/Murray-Smith-1"
+		},
+		{
+			"name": "Reddit",
+			"url": "http://www.reddit.com/user/mismith/"
+		},
+		{
+			"name": "Stack Overflow",
+			"url": "http://stackoverflow.com/users/888928/murray-smith",
+			"priority": 2
+		},
+		{
+			"name": "Tumblr",
+			"url": "http://mismith.tumblr.com/"
+		},
+		{
+			"name": "Twitter",
+			"url": "https://twitter.com/mismith"
+		}
+	],
+	"skills": [
+		{
+			"name": "Tech",
+			"description": "I'm well-versed in modern web technologies like ",
+			"items": [
+				{
+					"name": "Angular",
+					"priority": 1
+				},
+				{
+					"name": "Apache"
+				},
+				{
+					"name": "Bootstrap"
+				},
+				{
+					"name": "CSS3"
+				},
+				{
+					"name": "ES2015"
+				},
+				{
+					"name": "git"
+				},
+				{
+					"name": "gulp"
+				},
+				{
+					"name": "HTML5"
+				},
+				{
+					"name": "jQuery"
+				},
+				{
+					"name": "Kohana"
+				},
+				{
+					"name": "LESS"
+				},
+				{
+					"name": "Nginx"
+				},
+				{
+					"name": "MySQL"
+				},
+				{
+					"name": "Node",
+					"priority": 3
+				},
+				{
+					"name": "npm"
+				},
+				{
+					"name": "PHP"
+				},
+				{
+					"name": "React",
+					"priority": 2
+				},
+				{
+					"name": "SASS"
+				},
+				{
+					"name": "Vanilla JS"
+				},
+				{
+					"name": "Vue"
+				},
+				{
+					"name": "Wordpress"
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"description": "I love keeping a lean stack using services like ",
+			"items": [
+				{
+					"name": "BeanStalk"
+				},
+				{
+					"name": "CloudFlare"
+				},
+				{
+					"name": "Contentful",
+					"priority": 2
+				},
+				{
+					"name": "Firebase",
+					"priority": 1
+				},
+				{
+					"name": "Formspree"
+				},
+				{
+					"name": "Google Apps"
+				},
+				{
+					"name": "GitHub Pages"
+				},
+				{
+					"name": "Heroku"
+				},
+				{
+					"name": "Mailgun"
+				},
+				{
+					"name": "OpenShift"
+				},
+				{
+					"name": "Postmark",
+					"priority": 3
+				}
+			]
+		},
+		{
+			"name": "Software",
+			"description": "I excel in all walks of software, and use industry-standard apps like ",
+			"items": [
+				{
+					"name": "1Password"
+				},
+				{
+					"name": "Acrobat"
+				},
+				{
+					"name": "Atom"
+				},
+				{
+					"name": "BackBlaze"
+				},
+				{
+					"name": "Chrome"
+				},
+				{
+					"name": "Dropbox"
+				},
+				{
+					"name": "Excel"
+				},
+				{
+					"name": "GitHub"
+				},
+				{
+					"name": "Google Docs"
+				},
+				{
+					"name": "Google Sheets"
+				},
+				{
+					"name": "Harvest"
+				},
+				{
+					"name": "Illustrator",
+					"priority": 3
+				},
+				{
+					"name": "InDesign"
+				},
+				{
+					"name": "iTeleport"
+				},
+				{
+					"name": "Keynote"
+				},
+				{
+					"name": "Pheonix"
+				},
+				{
+					"name": "Photoshop"
+				},
+				{
+					"name": "Postman"
+				},
+				{
+					"name": "Remote Desktop"
+				},
+				{
+					"name": "Sequel Pro"
+				},
+				{
+					"name": "OS X Server"
+				},
+				{
+					"name": "Sketch"
+				},
+				{
+					"name": "Slack"
+				},
+				{
+					"name": "Spotify"
+				},
+				{
+					"name": "Sublime Text",
+					"priority": 1
+				},
+				{
+					"name": "Team Viewer"
+				},
+				{
+					"name": "Terminal",
+					"priority": 2
+				},
+				{
+					"name": "Tower"
+				},
+				{
+					"name": "Transmit"
+				},
+				{
+					"name": "Word"
+				},
+				{
+					"name": "Xcode"
+				}
+			]
+		},
+		{
+			"name": "Communication",
+			"description": "I have strong and convincing writing skills—both professionally and personally."
+		},
+		{
+			"name": "Thinking",
+			"description": "I've got a keen, practical, and deeply creative spirit, which makes me a born problem solver, and a lover of philosophy."
+		},
+		{
+			"name": "Hobby Electronics",
+			"description": "I enjoy circuit design and theory—not to mention soldering, fiddling with componentry, and repairing electronics."
+		},
+		{
+			"name": "Artistry",
+			"description": "I'm an internationally exhibited filmmaker and grant recipient."
+		},
+		{
+			"name": "Film Production",
+			"description": "I have real-world experience in almost all filmmaking departments: editing, directing, camera operation, lighting/grip, visual effects, sound recording, scriptwriting, and more."
+		},
+		{
+			"name": "Athletics",
+			"description": "I'm an avid (and competitive) squash player, a casual ultimate/dodgeball/volleyball player, and an all around athlete."
+		}
+	],
+	"experience": [
+		{
+			"name": "Business Instincts Group",
+			"title": "Web Developer / IT Manager",
+			"duration": "Spring 2012 - Present",
+			"description": "Develop, maintain, and oversee all digital assets (websites/apps, IT infrastructure) for venture-creation / business consulting firm and its numerous startups.",
+			"url": "http://businessinstincts.com/"
+		},
+		{
+			"name": "Calgary Cinematheque",
+			"title": "Admin Coordinator",
+			"duration": "Fall 2010 - Summer 2012",
+			"description": "Act upon all orders of business for non-profit theatrical film exhibition society.",
+			"url": "http://calgarycinema.org/"
+		},
+		{
+			"name": "Calgary Society of Independent Filmmakers",
+			"title": "Communications Coordinator",
+			"duration": "Winter 2011 - Spring 2012",
+			"description": "Administer all internal and public relations duties; e.g. publishing weekly e-newsletters and maintaining member databases.",
+			"url": "http://csif.org/"
+		},
+		{
+			"name": "Calgary Society of Independent Filmmakers",
+			"title": "Production Coordinator",
+			"duration": "Summer 2011",
+			"description": "Oversee extensive film and video production facility, including handling a high-volume of professional equipment and coordinating all in-house technical operations.",
+			"url": "http://csif.org/"
+		},
+		{
+			"name": "Calgary International Film Festival",
+			"title": "Print Traffic Assistant",
+			"duration": "Fall 2011",
+			"description": "Oversee the shipping and receiving of all film prints at annual festival. Calmly handle any time-sensitive (and notoriously unpredictable) issues that arise.",
+			"url": "http://calgaryfilm.com/"
+		},
+		{
+			"name": "Birchcliff Energy Ltd.",
+			"title": "Graphic Designer",
+			"duration": "Summer 2010",
+			"description": "Design and produce a corporate one-pager, along with various other presentation materials.",
+			"url": "http://birchcliffenergy.com/"
+		},
+		{
+			"name": "Bethany Care Society - Corporate Headquarters",
+			"title": "Data Entry",
+			"duration": "Summer 2009 - Spring 2010",
+			"description": "Log private survey data; design and implement a secure web-based interface and database backend for data analysis.",
+			"url": "http://bethanycare.com/"
+		},
+		{
+			"name": "Barbecues Galore",
+			"title": "Warehouse & Sales",
+			"duration": "Summer 2006 - Fall 2008",
+			"description": "Assemble barbeques, staff warehouse, and man the sales floor.",
+			"url": "http://barbecuesgalore.ca"
+		},
+		{
+			"name": "Papa John's Pizza",
+			"title": "Cook",
+			"duration": "Spring 2004 - Spring 2006",
+			"description": "Cooked and prepared pizzas and pizza ingredients.",
+			"url": "http://papajohnspizza.ca/"
+		}
+	],
+	"education": [
+		{
+			"name": "University of Calgary",
+			"title": "Bachelor of Arts in Film Studies",
+			"duration": "Fall 2006 - Spring 2011",
+			"description": "Including many software engineering courses.",
+			"url": "http://ucalgary.ca"
+		},
+		{
+			"name": "Western Canada High School",
+			"title": "Bilingual Diploma (English/French)",
+			"duration": "Fall 2003 - Spring 2006",
+			"description": "Including many IB classes.",
+			"url": "http://schools.cbe.ab.ca/b816/"
+		}
+	],
+	"volunteering": [
+		{
+			"name": "Calgary Society of Independent Filmmakers",
+			"description": "Exhibition curator; committee member; festival programming jury member; graphic designer; blogger; published writer.",
+			"url": "http://csif.org/"
+		},
+		{
+			"name": "Calgary Cinematheque Society",
+			"description": "Ex-officio board member; designer; webmaster.",
+			"url": "http://calgarycinema.org/"
+		},
+		{
+			"name": "Calgary International Film Festival",
+			"description": "Theatre attendant for major local cultural event.",
+			"url": "http://calgaryfilm.com/"
+		},
+		{
+			"name": "Home Movie Day",
+			"description": "Projectionist and film maintenance technician.",
+			"url": "http://www.homemovieday.com/"
+		},
+		{
+			"name": "NUTV",
+			"description": "Editor for University of Calgary TV station.",
+			"url": "http://nutv.ca/"
+		}
+	],
+	"references": "Available upon request"
+}
