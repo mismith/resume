@@ -22,11 +22,11 @@ angular.module('XXXXXX', ['ui.bootstrap', 'firebaseHelper'])
 	
 	.config(function($firebaseHelperProvider){
 		// data
-		$firebaseHelperProvider.namespace('mismith-info');
+		$firebaseHelperProvider.namespace('mismith');
 	})
 	
 	.controller('AppCtrl', function($scope, $firebaseHelper, $q){
-		$scope.jsonData = $firebaseHelper.array('nodes'); //.$bindTo($scope, 'jsonData');
+		$scope.jsonData = $firebaseHelper.array('mismith-info', 'nodes'); //.$bindTo($scope, 'jsonData');
 		
 		var packages = {
 			// Lazily construct the package hierarchy from class names.
@@ -132,7 +132,7 @@ angular.module('XXXXXX', ['ui.bootstrap', 'firebaseHelper'])
 					}
 				}
 				if(key != linked.key){
-					var source = $firebaseHelper.object('nodes', linked.key);
+					var source = $firebaseHelper.object('mismith-info', 'nodes', linked.key);
 					
 					source.$loaded().then(function(d){
 						// make the changes locally
