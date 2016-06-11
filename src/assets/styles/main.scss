@@ -1,0 +1,42 @@
+// overrides
+$primary: #3f51b5;
+
+// includes
+@import 'boilerplate';
+
+// tags
+body {
+	background: $lightest;
+	color: $darkest;
+	font: 15px/1.2 'Roboto', Helvetica, Arial, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	text-transform: uppercase;
+}
+
+// classes
+.banner {
+	min-height: 75vh;
+}
+
+// sections
+#app {
+	min-height: 100%;
+}
+#header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: $hh;
+	z-index: 500;
+}
+#main {
+	margin-top: $hh;
+}
