@@ -49,6 +49,9 @@
 					"name": "Nginx"
 				},
 				{
+					"name": "Material Design"
+				},
+				{
 					"name": "MySQL"
 				},
 				{
@@ -82,7 +85,7 @@
 		{
 			"name": "Services",
 			"icon": "database",
-			"description": "I love keeping a lean stack using services like ",
+			"description": "I love keeping a lean stack using developer services like ",
 			"items": [
 				{
 					"name": "BeanStalk"
@@ -92,7 +95,7 @@
 				},
 				{
 					"name": "Contentful",
-					"priority": 3
+					"priority": 2
 				},
 				{
 					"name": "Firebase",
@@ -117,8 +120,11 @@
 					"name": "OpenShift"
 				},
 				{
-					"name": "Postmark",
-					"priority": 2
+					"name": "Postmark"
+				},
+				{
+					"name": "Wordpress",
+					"priority": 3
 				}
 			]
 		},
@@ -283,6 +289,322 @@
 		{
 			"name": "Last.fm",
 			"url": "http://www.last.fm/user/cinesmith"
+		}
+	],
+	"portfolio": [
+		{
+			"name": "Websites",
+			"icon": "desktop",
+			"description": "I build websites in all flavors for companies of all varieties; some real-world examples include: ",
+			"items": [
+				{
+					"name": "AXIAL Group of Companies",
+					"url": "http://axialcompanies.com",
+					"tags": [
+						"jquery",
+						"static",
+						"mailgun"
+					]
+				},
+
+				{
+					"name": "Drivetrain",
+					"url": "http://www.drivetrainagency.com",
+					"tags": [
+						"angular",
+						"static"
+					]
+				},
+
+				{
+					"name": "AtlanTech",
+					"url": "https://atlantech.ie",
+					"tags": [
+						"angular",
+						"static",
+						"cloudflare",
+						"formspree"
+					]
+				},
+				{
+					"name": "Liquidium One Financial",
+					"url": "https://liquidium.one",
+					"tags": [
+						"angular",
+						"static",
+						"cloudflare",
+						"formspree"
+					]
+				},
+				{
+					"name": "Paze",
+					"url": "https://paze.com",
+					"priority": 3,
+					"tags": [
+						"angular",
+						"static",
+						"cloudflare",
+						"formspree"
+					]
+				},
+				{
+					"name": "Business Instincts Group",
+					"url": "https://businessinstincts.com",
+					"tags": [
+						"angular",
+						"contentful",
+						"cloudflare"
+					]
+				},
+				{
+					"name": "Health Outcomes Worldwide",
+					"url": "http://healthoutcomesww.com",
+					"tags": [
+						"angular",
+						"contentful"
+					]
+				},
+				{
+					"name": "Raptor Rig",
+					"url": "http://raptorrig.com",
+					"tags": [
+						"angular",
+						"contentful",
+						"cloudflare"
+					]
+				},
+				{
+					"name": "Tarco",
+					"url": "http://tarco.com",
+					"tags": [
+						"angular",
+						"contentful"
+					]
+				},
+
+				{
+					"name": "AXIAL Energy Technologies",
+					"url": "http://axialenergytech.com",
+					"tags": [
+						"jquery",
+						"kohana"
+					]
+				},
+
+				{
+					"name": "Cameron Chell",
+					"url": "http://cameronchell.com",
+					"tags": [
+						"jquery",
+						"wordpress"
+					]
+				},
+				{
+					"name": "Sustainable Startup",
+					"url": "http://sustainablestartup.ca",
+					"tags": [
+						"jquery",
+						"wordpress"
+					]
+				},
+
+				{
+					"name": "Cold Bore Technology",
+					"url": "https://coldboretechnology.com",
+					"tags": [
+						"angular",
+						"wordpress-api",
+						"cloudflare",
+						"formspree"
+					]
+				},
+				{
+					"name": "Draganfly",
+					"url": "http://www.draganfly.com",
+					"tags": [
+						"angular",
+						"wordpress-api"
+					]
+				},
+				{
+					"name": "Slyce",
+					"url": "http://slyce.it",
+					"priority": 2,
+					"tags": [
+						"angular",
+						"wordpress",
+						"wordpress-api",
+						"cloudflare",
+						"formspree"
+					]
+				},
+				{
+					"name": "MicroMech",
+					"url": "http://www.micromech.net",
+					"priority": 1,
+					"tags": [
+						"angular",
+						"firebase",
+						"openshift"
+					]
+				},
+
+				{
+					"name": "Bring Back Soda Licious",
+					"url": "http://bringbacksodalicious.com",
+					"tags": [
+						"angular",
+						"firebase"
+					]
+				},
+				{
+					"name": "mismith.github.io",
+					"url": "https://mismith.github.io/",
+					"tags": [
+						"vue"
+					]
+				}
+			]
+		},
+		{
+			"name": "Web apps",
+			"icon": "mobile",
+			"description": "I create web apps when I need to coordinate specific tasks with friends/colleagues: ",
+			"items": [
+				{
+					"name": "Roster IO",
+					"url": "https://roster.mismith.io",
+					"priority": 1,
+					"tags": [
+						"angular",
+						"firebase",
+						"postmark",
+						"material-design",
+						"nginx"
+					]
+				},
+				{
+					"name": "Lineup Planner",
+					"url": "https://mismith.github.io/lineup-planner/",
+					"priority": 3,
+					"tags": [
+						"angular",
+						"firebase",
+						"bootstrap"
+					]
+				},
+				{
+					"name": "BIGSIG",
+					"url": "http://tools.businessinstincts.com/signature/",
+					"tags": [
+						"angular",
+						"firebase",
+						"bootstrap"
+					]
+				},
+				{
+					"name": "Treasure League Clue Explorer",
+					"url": "https://mismith.github.io/treasure-league-clue-explorer/",
+					"priority": 2,
+					"tags": [
+						"angular2",
+						"firebase"
+					]
+				}
+			]
+		},
+		{
+			"name": "Tools",
+			"icon": "wrench",
+			"description": "I like to abstract away complexity by creating online tools like ",
+			"items": [
+				{
+					"name": "UT99 Announcer",
+					"url": "https://mismith.github.io/ut99announcer/",
+					"tags": [
+						"angular",
+						"html5"
+					]
+				},
+				{
+					"name": "Tic Tools",
+					"url": "https://mismith.github.io/tic-tools/",
+					"priority": 1,
+					"tags": [
+						"react",
+						"firebase"
+					]
+				},
+				{
+					"name": "Clue",
+					"url": "https://mismith.github.io/clue/",
+					"priority": 2,
+					"tags": [
+						"react",
+						"firebase"
+					]
+				},
+				{
+					"name": "Pure Function Visualizer",
+					"url": "https://mismith.github.io/pure-function-visualizer/",
+					"priority": 3,
+					"tags": [
+						"angular2"
+					]
+				}
+			]
+		},
+		{
+			"name": "Libraries",
+			"icon": "code",
+			"description": "I write micro-libraries to simplify repeated tasks and/or streamline specific procedures: ",
+			"items": [
+				{
+					"name": "Lock Generator",
+					"url": "https://mismith.github.io/lock-generator/build/",
+					"tags": [
+						"vanilla-js",
+						"es2015"
+					]
+				},
+				{
+					"name": "Whiplinker",
+					"url": "https://github.com/mismith/whiplinker",
+					"priority": 3,
+					"tags": [
+						"vanilla-js",
+						"es2015"
+					]
+				},
+				{
+					"name": "Regex Input String",
+					"url": "https://github.com/mismith/regex-input-string",
+					"priority": 2,
+					"tags": [
+						"vanilla-js",
+						"es2015"
+					]
+				},
+				{
+					"name": "Firebase File Uploader",
+					"url": "https://github.com/mismith/firebase-file-uploader",
+					"tags": [
+						"vanilla-js",
+						"es2015",
+						"html5",
+						"firebase"
+					]
+				},
+				{
+					"name": "AngularFire Helper",
+					"url": "https://github.com/mismith/angularfire-helper",
+					"priority": 1,
+					"tags": [
+						"angular",
+						"firebase"
+					]
+				}
+			]
 		}
 	],
 	"experience": [
