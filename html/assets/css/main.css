@@ -535,12 +535,9 @@ sup {
 li {
   margin-bottom: 10px; }
   li.iconed {
-    -ms-flex-preferred-size: calc(50% - 28px);
-        flex-basis: calc(50% - 28px);
     position: relative;
     list-style: none;
-    margin-left: 28px;
-    padding-right: 20px; }
+    margin-left: 28px; }
     li.iconed > .fa {
       display: inline-block;
       position: absolute;
@@ -551,6 +548,11 @@ li {
       font-size: 16px;
       text-align: center;
       color: #333; }
+    @media (min-width: 600px) {
+      li.iconed {
+        -ms-flex-preferred-size: calc(50% - 28px);
+            flex-basis: calc(50% - 28px);
+        padding-right: 20px; } }
 
 .social .fa {
   font-size: 32px;

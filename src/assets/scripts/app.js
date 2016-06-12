@@ -4,6 +4,7 @@ let MiResume = Vue.extend({
 			resume: null,
 			filtered: null,
 			actives: [],
+			order: undefined,
 		};
 	},
 	methods: {
@@ -53,6 +54,14 @@ let MiResume = Vue.extend({
 		toggleActive(item) {
 			return this.isActive(item) ? this.actives.splice(this.actives.indexOf(item), 1) : this.actives.push(item);
 		},
+
+		isMobile() {
+			let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+			return width < 600;
+		},
+		handleResize() {
+			console.log(this.order = this.isMobile() ? null : '_order');
+		},
 	},
 	init() {
 		fetch('resume.json')
@@ -70,13 +79,12 @@ let MiResume = Vue.extend({
 							this.filtered[section] = this.resume[section].filter(item => item.relevant !== false);
 							break;
 						case 'about':
-							// flip order for columnal display
-							this.filtered[section] = [];
+							// store order for columnal display
 							let half = Math.ceil(this.resume[section].length / 2);
-							for (let i = 0; i < this.resume[section].length; i++) {
-								let j = i % 2 === 0 ? i / 2 : half + Math.floor(i/2);
-								this.filtered[section][i] = this.resume[section][j];
-							}
+							this.filtered[section] = this.resume[section].map((item, i) => {
+								item._order = i < half ? i * 2 : i * 2 - this.resume[section].length + 1;
+								return item;
+							});
 							break;
 						default:
 							// no filtering needed
@@ -85,6 +93,14 @@ let MiResume = Vue.extend({
 					}
 				}
 			});
+	},
+	ready() {
+		window.addEventListener('load', this.handleResize);
+		window.addEventListener('resize', this.handleResize);
+	},
+	beforeDestroy() {
+		window.removeEventListener('load', this.handleResize);
+		window.removeEventListener('resize', this.handleResize);
 	},
 	template: `
 <div>
@@ -102,7 +118,7 @@ let MiResume = Vue.extend({
 			<h2>about</h2>
 		</header>
 		<ul class="flex-row">
-			<li v-for="skill of filtered.about" class="iconed">
+			<li v-for="skill of filtered.about | orderBy order" class="iconed">
 				<i class="fa fa-{{ skill.icon }}" :title="skill.name"></i>
 				<span>{{ skill.description + (skill.items ? topPicks(skill.items) + '.' : '') }}</span>
 				<button v-if="skill.items" @click="toggleActive(skill)" class="btn more"><i class="fa fa-{{ isActive(skill) ? 'minus' : 'plus' }}-circle"></i> {{ skill.items.length - 3 }} {{ isActive(skill) ? 'less' : 'more' }}</button>
