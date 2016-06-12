@@ -1,60 +1,14 @@
 {
 	"info": {
 		"name": "Murray Smith",
-		"address": "4512 4A ST SW, Calgary, AB, T2S 2A1",
-		"phone": "4038303897",
-		"email": "murray@mismith.info",
 		"description": "I'm a percolative propellorhead and curious, focused problem-solver. My talent is learning, and my passion is building web applications and tools.",
-		"url": "http://mismith.info",
+		"email": "murray@mismith.info",
 		"image": "https://avatars.io/gravatar/murray@mismith.info/medium"
 	},
-	"social": [
-		{
-			"name": "Facebook",
-			"url": "https://www.facebook.com/mismith"
-		},
-		{
-			"name": "Github",
-			"url": "https://github.com/mismith",
-			"priority": 1
-		},
-		{
-			"name": "Instagram",
-			"url": "https://instagram.com/_mismith/"
-		},
-		{
-			"name": "Last.fm",
-			"url": "http://www.last.fm/user/cinesmith"
-		},
-		{
-			"name": "LinkedIn",
-			"url": "https://www.linkedin.com/in/murrayiainsmith"
-		},
-		{
-			"name": "Quora",
-			"url": "http://www.quora.com/Murray-Smith-1"
-		},
-		{
-			"name": "Reddit",
-			"url": "http://www.reddit.com/user/mismith/"
-		},
-		{
-			"name": "Stack Overflow",
-			"url": "http://stackoverflow.com/users/888928/murray-smith",
-			"priority": 2
-		},
-		{
-			"name": "Tumblr",
-			"url": "http://mismith.tumblr.com/"
-		},
-		{
-			"name": "Twitter",
-			"url": "https://twitter.com/mismith"
-		}
-	],
-	"skills": [
+	"about": [
 		{
 			"name": "Tech",
+			"icon": "html5",
 			"description": "I'm well-versed in modern web technologies like ",
 			"items": [
 				{
@@ -127,6 +81,7 @@
 		},
 		{
 			"name": "Services",
+			"icon": "database",
 			"description": "I love keeping a lean stack using services like ",
 			"items": [
 				{
@@ -137,7 +92,7 @@
 				},
 				{
 					"name": "Contentful",
-					"priority": 2
+					"priority": 3
 				},
 				{
 					"name": "Firebase",
@@ -163,12 +118,13 @@
 				},
 				{
 					"name": "Postmark",
-					"priority": 3
+					"priority": 2
 				}
 			]
 		},
 		{
 			"name": "Software",
+			"icon": "laptop",
 			"description": "I excel in all walks of software, and use industry-standard apps like ",
 			"items": [
 				{
@@ -271,27 +227,62 @@
 		},
 		{
 			"name": "Communication",
+			"icon": "keyboard-o",
 			"description": "I have strong and convincing writing skills—both professionally and personally."
 		},
 		{
 			"name": "Thinking",
+			"icon": "lightbulb-o",
 			"description": "I've got a keen, practical, and deeply creative spirit, which makes me a born problem solver, and a lover of philosophy."
 		},
 		{
 			"name": "Hobby Electronics",
+			"icon": "bolt",
 			"description": "I enjoy circuit design and theory—not to mention soldering, fiddling with componentry, and repairing electronics."
 		},
 		{
-			"name": "Artistry",
-			"description": "I'm an internationally exhibited filmmaker and grant recipient."
-		},
-		{
 			"name": "Film Production",
-			"description": "I have real-world experience in almost all filmmaking departments: editing, directing, camera operation, lighting/grip, visual effects, sound recording, scriptwriting, and more."
+			"icon": "video-camera",
+			"description": "I'm an internationally-exhibited filmmaker, a grant recipient, and have experience in all film departments from scriptwriting through to visual effects."
 		},
 		{
 			"name": "Athletics",
-			"description": "I'm an avid (and competitive) squash player, a casual ultimate/dodgeball/volleyball player, and an all around athlete."
+			"icon": "heartbeat",
+			"description": "I'm an avid (and competitive) squash player, a casual ultimate / dodgeball / volleyball player, and an all around athlete."
+		}
+	],
+	"social": [
+		{
+			"name": "Github",
+			"url": "https://github.com/mismith"
+		},
+		{
+			"name": "Stack Overflow",
+			"url": "http://stackoverflow.com/users/888928/murray-smith"
+		},
+		{
+			"name": "Tumblr",
+			"url": "http://mismith.tumblr.com/"
+		},
+		{
+			"name": "Facebook",
+			"url": "https://www.facebook.com/mismith"
+		},
+		{
+			"name": "Twitter",
+			"url": "https://twitter.com/_mismith"
+		},
+		{
+			"name": "Instagram",
+			"url": "https://www.instagram.com/_mismith/"
+		},
+		{
+			"name": "LinkedIn",
+			"url": "https://www.linkedin.com/in/murrayiainsmith"
+		},
+		{
+			"name": "Last.fm",
+			"url": "http://www.last.fm/user/cinesmith"
 		}
 	],
 	"experience": [
@@ -306,57 +297,65 @@
 			"name": "Calgary Cinematheque",
 			"title": "Admin Coordinator",
 			"duration": "Fall 2010 - Summer 2012",
-			"description": "Act upon all orders of business for non-profit theatrical film exhibition society.",
-			"url": "http://calgarycinema.org/"
+			"description": "Act upon all orders of business for non-profit theatrical film exhibition society: from box office accounting to web administration.",
+			"url": "http://calgarycinema.org/",
+			"relevant": false
 		},
 		{
 			"name": "Calgary Society of Independent Filmmakers",
 			"title": "Communications Coordinator",
 			"duration": "Winter 2011 - Spring 2012",
 			"description": "Administer all internal and public relations duties; e.g. publishing weekly e-newsletters and maintaining member databases.",
-			"url": "http://csif.org/"
+			"url": "http://csif.org/",
+			"relevant": false
 		},
 		{
 			"name": "Calgary Society of Independent Filmmakers",
 			"title": "Production Coordinator",
 			"duration": "Summer 2011",
 			"description": "Oversee extensive film and video production facility, including handling a high-volume of professional equipment and coordinating all in-house technical operations.",
-			"url": "http://csif.org/"
+			"url": "http://csif.org/",
+			"relevant": false
 		},
 		{
 			"name": "Calgary International Film Festival",
 			"title": "Print Traffic Assistant",
 			"duration": "Fall 2011",
 			"description": "Oversee the shipping and receiving of all film prints at annual festival. Calmly handle any time-sensitive (and notoriously unpredictable) issues that arise.",
-			"url": "http://calgaryfilm.com/"
+			"url": "http://calgaryfilm.com/",
+			"relevant": false
 		},
 		{
 			"name": "Birchcliff Energy Ltd.",
 			"title": "Graphic Designer",
 			"duration": "Summer 2010",
 			"description": "Design and produce a corporate one-pager, along with various other presentation materials.",
-			"url": "http://birchcliffenergy.com/"
+			"url": "http://birchcliffenergy.com/",
+			"relevant": false
 		},
 		{
 			"name": "Bethany Care Society - Corporate Headquarters",
 			"title": "Data Entry",
 			"duration": "Summer 2009 - Spring 2010",
 			"description": "Log private survey data; design and implement a secure web-based interface and database backend for data analysis.",
-			"url": "http://bethanycare.com/"
+			"url": "http://bethanycare.com/",
+			"relevant": false
 		},
 		{
 			"name": "Barbecues Galore",
 			"title": "Warehouse & Sales",
 			"duration": "Summer 2006 - Fall 2008",
 			"description": "Assemble barbeques, staff warehouse, and man the sales floor.",
-			"url": "http://barbecuesgalore.ca"
+			"url": "http://barbecuesgalore.ca",
+			"relevant": false
 		},
 		{
 			"name": "Papa John's Pizza",
 			"title": "Cook",
 			"duration": "Spring 2004 - Spring 2006",
 			"description": "Cooked and prepared pizzas and pizza ingredients.",
-			"url": "http://papajohnspizza.ca/"
+			"url": "http://papajohnspizza.ca/",
+			"relevant": false
 		}
 	],
 	"education": [
@@ -379,28 +378,32 @@
 		{
 			"name": "Calgary Society of Independent Filmmakers",
 			"description": "Exhibition curator; committee member; festival programming jury member; graphic designer; blogger; published writer.",
+			"duration": "Fall 2008 - Summer 2012",
 			"url": "http://csif.org/"
 		},
 		{
 			"name": "Calgary Cinematheque Society",
 			"description": "Ex-officio board member; designer; webmaster.",
+			"duration": "Fall 2009 - Fall 2010",
 			"url": "http://calgarycinema.org/"
 		},
 		{
 			"name": "Calgary International Film Festival",
 			"description": "Theatre attendant for major local cultural event.",
-			"url": "http://calgaryfilm.com/"
+			"url": "http://calgaryfilm.com/",
+			"relevant": false
 		},
 		{
 			"name": "Home Movie Day",
 			"description": "Projectionist and film maintenance technician.",
-			"url": "http://www.homemovieday.com/"
+			"url": "http://www.homemovieday.com/",
+			"relevant": false
 		},
 		{
 			"name": "NUTV",
 			"description": "Editor for University of Calgary TV station.",
-			"url": "http://nutv.ca/"
+			"url": "http://nutv.ca/",
+			"relevant": false
 		}
-	],
-	"references": "Available upon request"
+	]
 }
