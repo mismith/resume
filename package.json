@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "deploy": "git subtree push --prefix html origin gh-pages"
+  },
   "devDependencies": {
     "autoprefixer": "^6.1.2",
     "babel-preset-es2015": "^6.3.13",
