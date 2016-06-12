@@ -1,42 +1,105 @@
 // overrides
-$primary: #3f51b5;
+$primary: #5A0;
 
 // includes
 @import 'boilerplate';
 
 // tags
 body {
-	background: $lightest;
+	width: auto;
+	height: auto;
+	background-color: $lightest;
+	background-image: url(../img/bg/textured_paper.png);
 	color: $darkest;
-	font: 15px/1.2 'Roboto', Helvetica, Arial, sans-serif;
+	font: 400 15px/1.2 'Cabin', Helvetica, Arial, sans-serif;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-weight: inherit;
+strong + a {
+	display: block;
+}
+small {
+	display: block;
 	text-transform: uppercase;
+	font-size: 10px;
+	opacity: .5;
+	margin: 5px 0;
+}
+ol + footer {
+	padding-left: 40px;
+}
+sup {
+	vertical-align: text-top;
+	margin-left: 2px;
+}
+li {
+	margin-bottom: 10px;
+
+	&.iconed {
+		flex-basis: calc(50% - 28px);
+		position: relative;
+		list-style: none;
+		margin-left: 28px;
+		padding-right: 20px;
+
+		> .fa {
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			left: -36px;
+			width: 36px;
+			height: 20px;
+			font-size: 16px;
+			text-align: center;
+			color: $darker;
+		}
+	}
+}
+.social {
+	.fa {
+		font-size: 32px;
+		text-decoration: none;
+
+		&:hover {
+			color: $darker;
+		}
+	}
+}
+.btn {
+	&:hover {
+		text-decoration: underline;
+	}
+}
+.btn.more {
+	@extend .passthru;
+	display: inline-flex;
+	align-items: center;
+	background-color: transparent;
+	color: $primary;
+	font-size: .75em;
+	padding: 0;
+
+	.fa {
+		margin-right: 2px;
+	}
+}
+ul.more {
+	column-count: 2;
+	background-color: rgba($darkest, .1);
+	color: $dark;
+	font-size: small;
+	padding: 10px;
+	margin: 5px 0;
+
+	li {
+		list-style: none;
+		margin: 0;
+	}
 }
 
-// classes
-.banner {
-	min-height: 75vh;
-}
-
-// sections
 #app {
-	min-height: 100%;
-}
-#header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: $hh;
-	z-index: 500;
-}
-#main {
-	margin-top: $hh;
+	background-color: rgba($lightest, .15);
+	min-width: 400px;
+	max-width: 600px;
+	padding: 2% 5% 5%;
+	margin: 0 auto;
+	box-sizing: content-box;
 }
