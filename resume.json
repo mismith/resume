@@ -500,7 +500,7 @@
 		{
 			"name": "Personal",
 			"icon": "flask",
-			"description": "Learns and experiments with new technology by creating personal-use tools like ",
+			"description": "Learns and experiments with new technology by creating tools like ",
 			"items": [
 				{
 					"name": "Tic Tools",
