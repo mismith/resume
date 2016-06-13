@@ -1,5 +1,6 @@
 // overrides
 $primary: #5A0;
+$lighter: #ddd;
 
 // includes
 @import 'boilerplate';
@@ -8,7 +9,7 @@ $primary: #5A0;
 body {
 	width: auto;
 	height: auto;
-	background-color: $lightest;
+	background-color: $lighter;
 	background-image: url(../img/bg/textured_paper.png);
 	color: $darkest;
 	font: 400 15px/1.2 Helvetica, Arial, sans-serif;

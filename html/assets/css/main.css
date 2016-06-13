@@ -373,7 +373,7 @@ a {
   background-color: #FFF; }
 
 .bg-lighter {
-  background-color: #F1F2F2; }
+  background-color: #ddd; }
 
 .bg-light {
   background-color: #999; }
@@ -417,7 +417,7 @@ a {
   color: #FFF; }
 
 .color-lighter {
-  color: #F1F2F2; }
+  color: #ddd; }
 
 .color-light {
   color: #999; }
@@ -510,7 +510,7 @@ a {
 body {
   width: auto;
   height: auto;
-  background-color: #FFF;
+  background-color: #ddd;
   background-image: url(../img/bg/textured_paper.png);
   color: #000;
   font: 400 15px/1.2 Helvetica, Arial, sans-serif; }
