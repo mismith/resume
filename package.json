@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "deploy": "git subtree push --prefix html github gh-pages"
+    "deploy": "git subtree push --prefix html github gh-pages && git subtree push --prefix html origin master"
   },
   "devDependencies": {
     "autoprefixer": "^6.1.2",
