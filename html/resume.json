@@ -1,7 +1,7 @@
 {
 	"info": {
 		"name": "Murray Smith",
-		"description": "I'm a percolative propellorhead and curious, focused problem-solver. My talent is learning, and my passion is building web apps and tools.",
+		"description": "I'm a percolative propellorhead and curious, focused problem-solver. I'm looking to leverage my talent for learning by joining a team to build world-class web apps and/or tools.",
 		"email": "murray@mismith.info",
 		"image": "https://avatars.io/gravatar/murray@mismith.info/medium"
 	},
@@ -85,7 +85,7 @@
 		{
 			"name": "Services",
 			"icon": "database",
-			"description": "Loves keeping a lean stack using developer services like ",
+			"description": "Keeps a lean stack using established developer services like ",
 			"items": [
 				{
 					"name": "BeanStalk"
@@ -239,12 +239,12 @@
 		{
 			"name": "Thinking",
 			"icon": "lightbulb-o",
-			"description": "A lover of philosophy and a born problem solver because of keen, practical, and deeply creative spirit."
+			"description": "Lover of philosophy and born problem-solver because of keen, practical, and deeply creative spirit."
 		},
 		{
 			"name": "Hobby Electronics",
 			"icon": "bolt",
-			"description": "Enjoys soldering, repairing electronics, and fiddling with electronic componentry."
+			"description": "Enjoys soldering, repairing equipment, and fiddling with electronic componentry."
 		},
 		{
 			"name": "Film Production",
@@ -254,7 +254,7 @@
 		{
 			"name": "Athletics",
 			"icon": "heartbeat",
-			"description": "Avid (and competitive) squash player, casual ultimate / dodgeball / volleyball player, and an all around athlete."
+			"description": "Focuses on competitive squash, and enjoys weekly social sports such as ultimate, dodgeball, and volleyball."
 		}
 	],
 	"social": [
@@ -453,7 +453,7 @@
 		{
 			"name": "Web apps",
 			"icon": "users",
-			"description": "Creates collaborative web apps to coordinate offline interests: ",
+			"description": "Creates collaborative web apps to coordinate offline interests; e.g. ",
 			"items": [
 				{
 					"name": "Roster IO",
@@ -558,7 +558,7 @@
 		{
 			"name": "Libraries",
 			"icon": "code",
-			"description": "Writes micro-libraries to streamline repeated tasks and/or simplify complex procedures: ",
+			"description": "Writes micro-libraries to streamline repeated tasks and/or simplify complex procedures; see ",
 			"items": [
 				{
 					"name": "Lock Generator",
