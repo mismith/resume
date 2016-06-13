@@ -1,7 +1,7 @@
 {
 	"info": {
 		"name": "Murray Smith",
-		"description": "I'm a percolative propellorhead and curious, focused problem-solver. My talent is learning, and my passion is building web applications and tools.",
+		"description": "I'm a percolative propellorhead and curious, focused problem-solver. My talent is learning, and my passion is building web apps and tools.",
 		"email": "murray@mismith.info",
 		"image": "https://avatars.io/gravatar/murray@mismith.info/medium"
 	},
@@ -9,7 +9,7 @@
 		{
 			"name": "Tech",
 			"icon": "html5",
-			"description": "I'm well-versed in modern web technologies like ",
+			"description": "Well-versed in modern web technologies like ",
 			"items": [
 				{
 					"name": "Angular",
@@ -85,7 +85,7 @@
 		{
 			"name": "Services",
 			"icon": "database",
-			"description": "I love keeping a lean stack using developer services like ",
+			"description": "Loves keeping a lean stack using developer services like ",
 			"items": [
 				{
 					"name": "BeanStalk"
@@ -131,7 +131,7 @@
 		{
 			"name": "Software",
 			"icon": "laptop",
-			"description": "I excel in all walks of software, and use industry-standard apps like ",
+			"description": "Excels in all walks of software, and uses industry-standard apps like ",
 			"items": [
 				{
 					"name": "1Password"
@@ -234,27 +234,27 @@
 		{
 			"name": "Communication",
 			"icon": "keyboard-o",
-			"description": "I have strong and convincing writing skills—both professionally and personally."
+			"description": "Has strong and convincing writing skills—both professionally and personally."
 		},
 		{
 			"name": "Thinking",
 			"icon": "lightbulb-o",
-			"description": "I've got a keen, practical, and deeply creative spirit, which makes me a born problem solver, and a lover of philosophy."
+			"description": "A lover of philosophy and a born problem solver because of keen, practical, and deeply creative spirit."
 		},
 		{
 			"name": "Hobby Electronics",
 			"icon": "bolt",
-			"description": "I enjoy circuit design and theory—not to mention soldering, fiddling with componentry, and repairing electronics."
+			"description": "Enjoys soldering, repairing electronics, and fiddling with electronic componentry."
 		},
 		{
 			"name": "Film Production",
 			"icon": "video-camera",
-			"description": "I'm an internationally-exhibited filmmaker, a grant recipient, and have experience in all film departments from scriptwriting through to visual effects."
+			"description": "Internationally-exhibited filmmaker and grant recipient. Experienced in all film departments from scriptwriting through to visual effects."
 		},
 		{
 			"name": "Athletics",
 			"icon": "heartbeat",
-			"description": "I'm an avid (and competitive) squash player, a casual ultimate / dodgeball / volleyball player, and an all around athlete."
+			"description": "Avid (and competitive) squash player, casual ultimate / dodgeball / volleyball player, and an all around athlete."
 		}
 	],
 	"social": [
@@ -294,8 +294,8 @@
 	"portfolio": [
 		{
 			"name": "Websites",
-			"icon": "desktop",
-			"description": "I build websites in all flavors for companies of all varieties; some real-world examples include: ",
+			"icon": "building-o",
+			"description": "Builds websites in all flavors for companies of all varieties; some real-world examples include: ",
 			"items": [
 				{
 					"name": "AXIAL Group of Companies",
@@ -447,29 +447,13 @@
 						"firebase",
 						"openshift"
 					]
-				},
-
-				{
-					"name": "Bring Back Soda Licious",
-					"url": "http://bringbacksodalicious.com",
-					"tags": [
-						"angular",
-						"firebase"
-					]
-				},
-				{
-					"name": "mismith.github.io",
-					"url": "https://mismith.github.io/",
-					"tags": [
-						"vue"
-					]
 				}
 			]
 		},
 		{
 			"name": "Web apps",
-			"icon": "mobile",
-			"description": "I create web apps when I need to coordinate specific tasks with friends/colleagues: ",
+			"icon": "users",
+			"description": "Creates collaborative web apps to coordinate offline interests: ",
 			"items": [
 				{
 					"name": "Roster IO",
@@ -514,18 +498,10 @@
 			]
 		},
 		{
-			"name": "Tools",
-			"icon": "wrench",
-			"description": "I like to abstract away complexity by creating online tools like ",
+			"name": "Personal",
+			"icon": "flask",
+			"description": "Learns and experiments with new technology by creating personal-use tools like ",
 			"items": [
-				{
-					"name": "UT99 Announcer",
-					"url": "https://mismith.github.io/ut99announcer/",
-					"tags": [
-						"angular",
-						"html5"
-					]
-				},
 				{
 					"name": "Tic Tools",
 					"url": "https://mismith.github.io/tic-tools/",
@@ -547,9 +523,34 @@
 				{
 					"name": "Pure Function Visualizer",
 					"url": "https://mismith.github.io/pure-function-visualizer/",
-					"priority": 3,
 					"tags": [
 						"angular2"
+					]
+				},
+
+				{
+					"name": "UT99 Announcer",
+					"url": "https://mismith.github.io/ut99announcer/",
+					"tags": [
+						"angular",
+						"html5"
+					]
+				},
+
+				{
+					"name": "Bring Back Soda Licious",
+					"url": "http://bringbacksodalicious.com",
+					"priority": 3,
+					"tags": [
+						"angular",
+						"firebase"
+					]
+				},
+				{
+					"name": "mismith.github.io",
+					"url": "https://mismith.github.io/",
+					"tags": [
+						"vue"
 					]
 				}
 			]
@@ -557,7 +558,7 @@
 		{
 			"name": "Libraries",
 			"icon": "code",
-			"description": "I write micro-libraries to simplify repeated tasks and/or streamline specific procedures: ",
+			"description": "Writes micro-libraries to streamline repeated tasks and/or simplify complex procedures: ",
 			"items": [
 				{
 					"name": "Lock Generator",
@@ -619,7 +620,7 @@
 			"name": "Calgary Cinematheque",
 			"title": "Admin Coordinator",
 			"duration": "Fall 2010 - Summer 2012",
-			"description": "Act upon all orders of business for non-profit theatrical film exhibition society: from box office accounting to web administration.",
+			"description": "Acted upon all orders of business for non-profit theatrical film exhibition society: from box office accounting to web administration.",
 			"url": "http://calgarycinema.org/",
 			"relevant": false
 		},
@@ -627,7 +628,7 @@
 			"name": "Calgary Society of Independent Filmmakers",
 			"title": "Communications Coordinator",
 			"duration": "Winter 2011 - Spring 2012",
-			"description": "Administer all internal and public relations duties; e.g. publishing weekly e-newsletters and maintaining member databases.",
+			"description": "Administered all internal and public relations duties; e.g. publishing weekly e-newsletters and maintaining member databases.",
 			"url": "http://csif.org/",
 			"relevant": false
 		},
@@ -635,7 +636,7 @@
 			"name": "Calgary Society of Independent Filmmakers",
 			"title": "Production Coordinator",
 			"duration": "Summer 2011",
-			"description": "Oversee extensive film and video production facility, including handling a high-volume of professional equipment and coordinating all in-house technical operations.",
+			"description": "Oversaw extensive film/video production facility, including: handling of a high-volume of professional equipment, and coordinating all in-house technical operations.",
 			"url": "http://csif.org/",
 			"relevant": false
 		},
@@ -643,7 +644,7 @@
 			"name": "Calgary International Film Festival",
 			"title": "Print Traffic Assistant",
 			"duration": "Fall 2011",
-			"description": "Oversee the shipping and receiving of all film prints at annual festival. Calmly handle any time-sensitive (and notoriously unpredictable) issues that arise.",
+			"description": "Oversaw the shipping and receiving of all film prints at annual festival. Calmly handled all time-sensitive (and notoriously unpredictable) issues that arose.",
 			"url": "http://calgaryfilm.com/",
 			"relevant": false
 		},
@@ -651,7 +652,7 @@
 			"name": "Birchcliff Energy Ltd.",
 			"title": "Graphic Designer",
 			"duration": "Summer 2010",
-			"description": "Design and produce a corporate one-pager, along with various other presentation materials.",
+			"description": "Designed and produced a corporate one-pager, along with various other presentation materials.",
 			"url": "http://birchcliffenergy.com/",
 			"relevant": false
 		},
@@ -659,7 +660,7 @@
 			"name": "Bethany Care Society - Corporate Headquarters",
 			"title": "Data Entry",
 			"duration": "Summer 2009 - Spring 2010",
-			"description": "Log private survey data; design and implement a secure web-based interface and database backend for data analysis.",
+			"description": "Logged private survey data, then designed and implemented a secure web-based interface and database backend for data analysis.",
 			"url": "http://bethanycare.com/",
 			"relevant": false
 		},
@@ -667,7 +668,7 @@
 			"name": "Barbecues Galore",
 			"title": "Warehouse & Sales",
 			"duration": "Summer 2006 - Fall 2008",
-			"description": "Assemble barbeques, staff warehouse, and man the sales floor.",
+			"description": "Assembled barbeques, staffed warehouse, and manned the sales floor.",
 			"url": "http://barbecuesgalore.ca",
 			"relevant": false
 		},
