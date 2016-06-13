@@ -120,7 +120,7 @@ let MiResume = Vue.extend({
 				<button v-if="article.items" @click="toggleActive(article)" class="btn more"><i class="fa fa-{{ isActive(article) ? 'minus' : 'plus' }}-circle"></i> {{ article.items.length - 3 }} {{ isActive(article) ? 'less' : 'more' }}</button>
 				<ul v-if="article.items" v-show="isActive(article)" class="more">
 					<li v-for="item of article.items | orderBy 'name'" :class="{priority: item.priority}">
-						<img v-if="item.url" :src="'http://www.google.com/s2/favicons?domain_url=' + item.url" height="12" />
+						<img v-if="item.url" :src="'https://www.google.com/s2/favicons?domain_url=' + item.url" height="12" />
 						<span v-if="!item.url">{{ item.name }}</span>
 						<a v-if="item.url" :href="item.url" target="_blank">{{ item.name }}</a>
 						<ul class="tags">
