@@ -513,7 +513,7 @@ body {
   background-color: #FFF;
   background-image: url(../img/bg/textured_paper.png);
   color: #000;
-  font: 400 15px/1.2 'Cabin', Helvetica, Arial, sans-serif; }
+  font: 400 15px/1.2 Helvetica, Arial, sans-serif; }
 
 strong + a {
   display: block; }
