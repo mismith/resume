@@ -553,17 +553,11 @@ li {
       font-size: 16px;
       text-align: center;
       color: #333; }
-    @media (min-width: 600px) {
+    @media print, (min-width: 600px) {
       li.iconed {
         -ms-flex-preferred-size: calc(50% - 28px);
             flex-basis: calc(50% - 28px);
         padding-right: 20px; } }
-
-.social .fa {
-  font-size: 32px;
-  text-decoration: none; }
-  .social .fa:hover {
-    color: #333; }
 
 .btn:hover {
   text-decoration: underline; }
@@ -579,6 +573,12 @@ li {
   padding: 0; }
   .btn.more .fa {
     margin-right: 2px; }
+
+.fa.hero {
+  font-size: 32px;
+  text-decoration: none; }
+  .fa.hero:hover {
+    color: #333; }
 
 .tags {
   display: inline-block;
@@ -637,13 +637,13 @@ ul.more {
     ul.more > *.priority a,
     ul.more > *.priority span {
       color: #5A0; }
-  .portfolio ul.more {
+  #portfolio ul.more {
     -webkit-column-count: 1;
        -moz-column-count: 1;
             column-count: 1; }
-    .portfolio ul.more .tags {
+    #portfolio ul.more .tags {
       display: block; }
-    .portfolio ul.more > * {
+    #portfolio ul.more > * {
       margin-bottom: 1em; }
 
 #app {
@@ -653,3 +653,14 @@ ul.more {
   padding: 2% 5% 5%;
   margin: 0 auto;
   box-sizing: content-box; }
+
+@media print {
+  body {
+    background: none; }
+  #app {
+    padding-left: 0;
+    padding-right: 0; }
+  #social {
+    -webkit-column-break-after: always;
+       page-break-after: always;
+            break-after: always; } }

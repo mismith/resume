@@ -55,19 +55,9 @@ li {
 			text-align: center;
 			color: $darker;
 		}
-		@media (min-width: 600px) {
+		@media print, (min-width: 600px) {
 			flex-basis: calc(50% - 28px);
 			padding-right: 20px;
-		}
-	}
-}
-.social {
-	.fa {
-		font-size: 32px;
-		text-decoration: none;
-
-		&:hover {
-			color: $darker;
 		}
 	}
 }
@@ -87,6 +77,16 @@ li {
 
 	.fa {
 		margin-right: 2px;
+	}
+}
+.fa {
+	&.hero {
+		font-size: 32px;
+		text-decoration: none;
+
+		&:hover {
+			color: $darker;
+		}
 	}
 }
 .tags {
@@ -171,7 +171,7 @@ ul.more {
 			}
 		}
 	}
-	.portfolio & {
+	#portfolio & {
 		column-count: 1;
 
 		.tags {
@@ -190,4 +190,17 @@ ul.more {
 	padding: 2% 5% 5%;
 	margin: 0 auto;
 	box-sizing: content-box;
+}
+
+@media print {
+	body {
+		background: none;
+	}
+	#app {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	#social {
+		break-after: always;
+	}
 }

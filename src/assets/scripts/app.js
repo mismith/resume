@@ -5,6 +5,7 @@ let MiResume = Vue.extend({
 			filtered: null,
 			actives: [],
 			order: undefined,
+			url: location.href.replace(/[\?#].*$/, ''),
 		};
 	},
 	methods: {
@@ -72,6 +73,7 @@ let MiResume = Vue.extend({
 							this.filtered[section] = this.resume[section].filter(item => item.relevant !== false);
 							break;
 						case 'about':
+						case 'portfolio':
 							// store order for columnal display
 							let half = Math.ceil(this.resume[section].length / 2);
 							this.filtered[section] = this.resume[section].map((item, i) => {
@@ -96,7 +98,7 @@ let MiResume = Vue.extend({
 		window.removeEventListener('resize', this.handleResize);
 	},
 	template: `
-<header class="flex-row flex-align-center">
+<header id="header" class="flex-row flex-align-center">
 	<div class="flex-grow flex-shrink padding-right" style="flex-basis: 50%;">
 		<h1>{{ resume.info.name }}</h1>
 		<p>{{ resume.info.description }}</p>
@@ -105,7 +107,7 @@ let MiResume = Vue.extend({
 		<img :src="resume.info.image" width="128" height="128" />
 	</figure>
 </header>
-<section v-for="section of ['about','portfolio']" :class="section">
+<section v-for="section of ['about','portfolio']" :id="section">
 	<header>
 		<h2>{{ section }}</h2>
 	</header>
@@ -116,7 +118,7 @@ let MiResume = Vue.extend({
 			<ol v-if="article.items" class="picks">
 				<li v-for="pick of topPicks(article.items)"><span v-if="!pick.url">{{ pick.name }}</span><a v-if="pick.url" :href="pick.url" target="_blank">{{ pick.name }}</a></li>
 			</ol>
-			<button v-if="article.items" @click="toggleActive(article)" class="btn more"><i class="fa fa-{{ isActive(article) ? 'minus' : 'plus' }}-circle"></i> {{ article.items.length - 3 }} {{ isActive(article) ? 'less' : 'more' }}</button>
+			<a v-if="article.items" :href="url + '#' + section" @click.prevent="toggleActive(article)" class="btn more"><i class="fa fa-{{ isActive(article) ? 'minus' : 'plus' }}-circle"></i> {{ article.items.length - 3 }}&nbsp;{{ isActive(article) ? 'less' : 'more' }}</a>
 			<ul v-if="article.items" v-show="isActive(article)" class="more">
 				<li v-for="item of article.items | orderBy 'name'" :class="{priority: item.priority}">
 					<img v-if="item.url" :src="'https://www.google.com/s2/favicons?domain_url=' + item.url" height="12" />
@@ -130,17 +132,17 @@ let MiResume = Vue.extend({
 		</li>
 	</ul>
 </section>
-<section class="social">
+<section id="social">
 	<header>
 		<h2>social</h2>
 	</header>
 	<ul class="flex-row flex-justify-around">
 		<li v-for="item of filtered.social">
-			<a :href="item.url" :title="item.name" target="_blank" :class="'fa fa-' + className(item.name)"></a>
+			<a :href="item.url" :title="item.name" target="_blank" :class="'hero fa fa-' + className(item.name)"></a>
 		</li>
 	</ul>
 </section>
-<section v-for="section of ['experience','education','volunteering']" :class="section">
+<section v-for="section of ['experience','education','volunteering']" :id="section">
 	<header>
 		<h2>{{ section }}</h2>
 	</header>
@@ -155,10 +157,10 @@ let MiResume = Vue.extend({
 		</li>
 	</ol>
 	<footer>
-		<button v-if="filtered[section].length < resume[section].length" @click="toggleActive(section)" class="btn more"><i class="fa fa-{{ isActive(section) ? 'minus' : 'plus' }}-circle"></i> {{ resume[section].length - filtered[section].length }} {{ isActive(section) ? 'less' : 'more' }}</button>
+		<a v-if="filtered[section].length < resume[section].length" :href="url + '#' + section" @click.prevent="toggleActive(section)" class="btn more"><i class="fa fa-{{ isActive(section) ? 'minus' : 'plus' }}-circle"></i> {{ resume[section].length - filtered[section].length }}&nbsp;{{ isActive(section) ? 'less' : 'more' }}</a>
 	</footer>
 </section>
-<section>
+<section id="references">
 	<header>
 		<h2>references</h2>
 	</header>
