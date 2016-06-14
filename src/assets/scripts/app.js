@@ -118,7 +118,7 @@ let MiResume = Vue.extend({
 			<ol v-if="article.items" class="picks">
 				<li v-for="pick of topPicks(article.items)"><span v-if="!pick.url">{{ pick.name }}</span><a v-if="pick.url" :href="pick.url" target="_blank">{{ pick.name }}</a></li>
 			</ol>
-			<a v-if="article.items" :href="url + '#' + section" @click.prevent="toggleActive(article)" class="btn more"><i class="fa fa-{{ isActive(article) ? 'minus' : 'plus' }}-circle"></i> {{ article.items.length - 3 }}&nbsp;{{ isActive(article) ? 'less' : 'more' }}</a>
+			<a v-if="article.items" :href="url" @click.prevent="toggleActive(article)" class="btn more"><i class="fa fa-{{ isActive(article) ? 'minus' : 'plus' }}-circle"></i> {{ article.items.length - 3 }}&nbsp;{{ isActive(article) ? 'less' : 'more' }}</a>
 			<ul v-if="article.items" v-show="isActive(article)" class="more">
 				<li v-for="item of article.items | orderBy 'name'" :class="{priority: item.priority}">
 					<img v-if="item.url" :src="'https://www.google.com/s2/favicons?domain_url=' + item.url" height="12" />
@@ -157,7 +157,7 @@ let MiResume = Vue.extend({
 		</li>
 	</ol>
 	<footer>
-		<a v-if="filtered[section].length < resume[section].length" :href="url + '#' + section" @click.prevent="toggleActive(section)" class="btn more"><i class="fa fa-{{ isActive(section) ? 'minus' : 'plus' }}-circle"></i> {{ resume[section].length - filtered[section].length }}&nbsp;{{ isActive(section) ? 'less' : 'more' }}</a>
+		<a v-if="filtered[section].length < resume[section].length" :href="url" @click.prevent="toggleActive(section)" class="btn more"><i class="fa fa-{{ isActive(section) ? 'minus' : 'plus' }}-circle"></i> {{ resume[section].length - filtered[section].length }}&nbsp;{{ isActive(section) ? 'less' : 'more' }}</a>
 	</footer>
 </section>
 <section id="references">
