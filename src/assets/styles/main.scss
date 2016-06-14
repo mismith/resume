@@ -14,6 +14,9 @@ body {
 	color: $darkest;
 	font: 400 15px/1.2 Helvetica, Arial, sans-serif;
 }
+main > section {
+	margin-top: 40px;
+}
 strong + a {
 	display: block;
 }
