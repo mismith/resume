@@ -350,6 +350,7 @@
 				{
 					"name": "Business Instincts Group",
 					"url": "https://businessinstincts.com",
+					"priority": 1,
 					"tags": [
 						"angular",
 						"contentful",
@@ -436,16 +437,6 @@
 						"wordpress-api",
 						"cloudflare",
 						"formspree"
-					]
-				},
-				{
-					"name": "MicroMech",
-					"url": "http://www.micromech.net",
-					"priority": 1,
-					"tags": [
-						"angular",
-						"firebase",
-						"openshift"
 					]
 				}
 			]
@@ -603,6 +594,14 @@
 					"tags": [
 						"angular",
 						"firebase"
+					]
+				},
+				{
+					"name": "WP Team Members",
+					"url": "https://github.com/mismith/wp-team-members",
+					"tags": [
+						"php",
+						"wordpress"
 					]
 				}
 			]
