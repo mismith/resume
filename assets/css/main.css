@@ -94,6 +94,7 @@ a {
   height: 20px;
   border: solid 1px #5A0;
   -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
       align-self: center; }
 
 .round, .layout-circle {
@@ -216,22 +217,18 @@ a {
 
 .flex-align-stretch {
   -ms-flex-align: stretch;
-      -ms-grid-row-align: stretch;
       align-items: stretch; }
 
 .flex-align-start {
   -ms-flex-align: start;
-      -ms-grid-row-align: flex-start;
       align-items: flex-start; }
 
 .flex-align-center {
   -ms-flex-align: center;
-      -ms-grid-row-align: center;
       align-items: center; }
 
 .flex-align-end {
   -ms-flex-align: end;
-      -ms-grid-row-align: flex-end;
       align-items: flex-end; }
 
 .flex-wrap {
@@ -613,9 +610,8 @@ ol.picks {
       content: '. '; }
 
 ul.more {
-  -webkit-column-count: 2;
-     -moz-column-count: 2;
-          column-count: 2;
+  -moz-column-count: 2;
+       column-count: 2;
   background-color: rgba(0, 0, 0, 0.1);
   color: #666;
   font-size: small;
@@ -636,11 +632,10 @@ ul.more {
         margin-left: 21px; }
     ul.more > *.priority a,
     ul.more > *.priority span {
-      color: #5A0; }
+      font-weight: bold; }
   #portfolio ul.more {
-    -webkit-column-count: 1;
-       -moz-column-count: 1;
-            column-count: 1; }
+    -moz-column-count: 1;
+         column-count: 1; }
     #portfolio ul.more .tags {
       display: block; }
     #portfolio ul.more > * {
@@ -661,6 +656,5 @@ ul.more {
     padding-left: 0;
     padding-right: 0; }
   #social {
-    -webkit-column-break-after: always;
-       page-break-after: always;
-            break-after: always; } }
+    page-break-after: always;
+         break-after: always; } }
