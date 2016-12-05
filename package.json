@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "start": "gulp",
     "deploy": "git subtree push --prefix html github gh-pages && git subtree push --prefix html origin master"
   },
   "devDependencies": {

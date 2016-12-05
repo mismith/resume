@@ -341,6 +341,7 @@
 				{
 					"name": "Business Instincts Group",
 					"url": "https://businessinstincts.com",
+					"priority": 1,
 					"tags": [
 						"angular",
 						"contentful",
@@ -569,6 +570,14 @@
 					"tags": [
 						"angular",
 						"firebase"
+					]
+				},
+				{
+					"name": "WP Team Members",
+					"url": "https://github.com/mismith/wp-team-members",
+					"tags": [
+						"php",
+						"wordpress"
 					]
 				}
 			]
