@@ -330,7 +330,6 @@
 				{
 					"name": "Paze",
 					"url": "https://paze.com",
-					"priority": 3,
 					"tags": [
 						"angular",
 						"static",
@@ -341,7 +340,7 @@
 				{
 					"name": "Business Instincts Group",
 					"url": "https://businessinstincts.com",
-					"priority": 1,
+					"priority": 2,
 					"tags": [
 						"angular",
 						"contentful",
@@ -406,7 +405,7 @@
 				{
 					"name": "Slyce",
 					"url": "http://slyce.it",
-					"priority": 2,
+					"priority": 3,
 					"tags": [
 						"angular",
 						"wordpress",
