@@ -167,8 +167,7 @@
 					"name": "Harvest"
 				},
 				{
-					"name": "Illustrator",
-					"priority": 3
+					"name": "Illustrator"
 				},
 				{
 					"name": "InDesign"
@@ -198,7 +197,8 @@
 					"name": "OS X Server"
 				},
 				{
-					"name": "Sketch"
+					"name": "Sketch",
+					"priority": 3
 				},
 				{
 					"name": "Slack"
@@ -308,15 +308,6 @@
 				},
 
 				{
-					"name": "Drivetrain",
-					"url": "http://www.drivetrainagency.com",
-					"tags": [
-						"angular",
-						"static"
-					]
-				},
-
-				{
 					"name": "AtlanTech",
 					"url": "https://atlantech.ie",
 					"tags": [
@@ -357,11 +348,13 @@
 					]
 				},
 				{
-					"name": "Health Outcomes Worldwide",
-					"url": "http://healthoutcomesww.com",
+					"name": "Campbell School of Highland Dance",
+					"url": "https://campbelldancers.com",
+					"priority": 1,
 					"tags": [
-						"angular",
-						"contentful"
+						"static",
+						"cloudflare",
+						"formspree"
 					]
 				},
 				{
@@ -388,23 +381,6 @@
 					"tags": [
 						"jquery",
 						"kohana"
-					]
-				},
-
-				{
-					"name": "Cameron Chell",
-					"url": "http://cameronchell.com",
-					"tags": [
-						"jquery",
-						"wordpress"
-					]
-				},
-				{
-					"name": "Sustainable Startup",
-					"url": "http://sustainablestartup.ca",
-					"tags": [
-						"jquery",
-						"wordpress"
 					]
 				},
 
@@ -436,16 +412,6 @@
 						"wordpress-api",
 						"cloudflare",
 						"formspree"
-					]
-				},
-				{
-					"name": "MicroMech",
-					"url": "http://www.micromech.net",
-					"priority": 1,
-					"tags": [
-						"angular",
-						"firebase",
-						"openshift"
 					]
 				}
 			]
@@ -610,10 +576,17 @@
 	],
 	"experience": [
 		{
+			"name": "SMART Technologies",
+			"title": "Front End Developer",
+			"duration": "Fall 2016 - Present",
+			"description": "Bridge the code gap between design and back-end development in industry-spanning enterprise setting; lead the charge in modernizing legacy digital assets, along with architecting an internal component prototying tool.",
+			"url": "https://home.smarttech.com/"
+		},
+		{
 			"name": "Business Instincts Group",
 			"title": "Web Developer / IT Manager",
-			"duration": "Spring 2012 - Present",
-			"description": "Develop, maintain, and oversee all digital assets (websites/apps, IT infrastructure) for venture-creation / business consulting firm and its numerous startups.",
+			"duration": "Spring 2012 - Fall 2016",
+			"description": "Developed, maintained, and oversaw all digital assets (websites/apps, IT infrastructure) for venture-creation / business consulting firm and its numerous startups.",
 			"url": "http://businessinstincts.com/"
 		},
 		{
