@@ -13,7 +13,7 @@
 			"items": [
 				{
 					"name": "Angular",
-					"priority": 1
+					"priority": 3
 				},
 				{
 					"name": "Apache"
@@ -22,10 +22,14 @@
 					"name": "Bootstrap"
 				},
 				{
-					"name": "CSS3"
+					"name": "CSS4"
 				},
 				{
-					"name": "ES2015"
+					"name": "ES6",
+					"priority": 5
+				},
+				{
+					"name": "ES7"
 				},
 				{
 					"name": "git"
@@ -52,11 +56,14 @@
 					"name": "Material Design"
 				},
 				{
+					"name": "MongoDB"
+				},
+				{
 					"name": "MySQL"
 				},
 				{
 					"name": "Node",
-					"priority": 3
+					"priority": 4
 				},
 				{
 					"name": "npm"
@@ -65,20 +72,30 @@
 					"name": "PHP"
 				},
 				{
+					"name": "PostCSS"
+				},
+				{
 					"name": "React",
 					"priority": 2
 				},
 				{
-					"name": "SASS"
+					"name": "SASS/SCSS"
 				},
 				{
 					"name": "Vanilla JS"
 				},
 				{
-					"name": "Vue"
+					"name": "Vue",
+					"priority": 1
+				},
+				{
+					"name": "Webpack"
 				},
 				{
 					"name": "Wordpress"
+				},
+				{
+					"name": "Yarn"
 				}
 			]
 		},
@@ -171,9 +188,6 @@
 				},
 				{
 					"name": "InDesign"
-				},
-				{
-					"name": "iTeleport"
 				},
 				{
 					"name": "Keynote"
@@ -308,26 +322,6 @@
 				},
 
 				{
-					"name": "AtlanTech",
-					"url": "https://atlantech.ie",
-					"tags": [
-						"angular",
-						"static",
-						"cloudflare",
-						"formspree"
-					]
-				},
-				{
-					"name": "Liquidium One Financial",
-					"url": "https://liquidium.one",
-					"tags": [
-						"angular",
-						"static",
-						"cloudflare",
-						"formspree"
-					]
-				},
-				{
 					"name": "Paze",
 					"url": "https://paze.com",
 					"tags": [
@@ -335,16 +329,6 @@
 						"static",
 						"cloudflare",
 						"formspree"
-					]
-				},
-				{
-					"name": "Business Instincts Group",
-					"url": "https://businessinstincts.com",
-					"priority": 2,
-					"tags": [
-						"angular",
-						"contentful",
-						"cloudflare"
 					]
 				},
 				{
@@ -360,6 +344,7 @@
 				{
 					"name": "Raptor Rig",
 					"url": "http://raptorrig.com",
+					"priority": 3,
 					"tags": [
 						"angular",
 						"contentful",
@@ -405,7 +390,7 @@
 				{
 					"name": "Slyce",
 					"url": "http://slyce.it",
-					"priority": 3,
+					"priority": 2,
 					"tags": [
 						"angular",
 						"wordpress",
