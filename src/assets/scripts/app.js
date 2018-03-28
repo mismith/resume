@@ -91,7 +91,7 @@ let MiResume = Vue.extend({
 			.then(() => {
 				// auto-expand section (e.g. if landing from PDF link click)
 				setTimeout(() => {
-					let more = document.querySelector(`${location.hash} .btn.more`);
+					let more = location.hash && document.querySelector(`${location.hash} .btn.more`);
 					if (more) {
 						more.click();
 					}
