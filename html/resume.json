@@ -12,8 +12,7 @@
 			"description": "Well-versed in modern web technologies like ",
 			"items": [
 				{
-					"name": "Angular",
-					"priority": 3
+					"name": "Angular"
 				},
 				{
 					"name": "Apache"
@@ -22,14 +21,31 @@
 					"name": "Bootstrap"
 				},
 				{
+					"name": "Canvas"
+				},
+				{
+					"name": "Cordova"
+				},
+				{
+					"name": "CSS3"
+				},
+				{
 					"name": "CSS4"
 				},
 				{
-					"name": "ES6",
-					"priority": 5
+					"name": "Cypress"
+				},
+				{
+					"name": "ES6"
 				},
 				{
 					"name": "ES7"
+				},
+				{
+					"name": "ESLint"
+				},
+				{
+					"name": "Express"
 				},
 				{
 					"name": "git"
@@ -41,7 +57,19 @@
 					"name": "HTML5"
 				},
 				{
+					"name": "IIS"
+				},
+				{
+					"name": "Jest"
+				},
+				{
 					"name": "jQuery"
+				},
+				{
+					"name": "JSON"
+				},
+				{
+					"name": "Koa"
 				},
 				{
 					"name": "Kohana"
@@ -69,6 +97,9 @@
 					"name": "npm"
 				},
 				{
+					"name": "Parcel"
+				},
+				{
 					"name": "PHP"
 				},
 				{
@@ -79,10 +110,32 @@
 					"priority": 2
 				},
 				{
+					"name": "REST APIs"
+				},
+				{
+					"name": "Rollup"
+				},
+				{
 					"name": "SASS/SCSS"
 				},
 				{
-					"name": "Vanilla JS"
+					"name": "Stylus"
+				},
+				{
+					"name": "SVN"
+				},
+				{
+					"name": "SVG"
+				},
+				{
+					"name": "TSLint"
+				},
+				{
+					"name": "Typescript",
+					"priority": 3
+				},
+				{
+					"name": "Vagrant"
 				},
 				{
 					"name": "Vue",
@@ -95,6 +148,9 @@
 					"name": "Wordpress"
 				},
 				{
+					"name": "XML"
+				},
+				{
 					"name": "Yarn"
 				}
 			]
@@ -102,17 +158,20 @@
 		{
 			"name": "Services",
 			"icon": "database",
-			"description": "Keeps a lean stack using established developer services like ",
+			"description": "Keeps stack current using developer-centric platforms and services like ",
 			"items": [
 				{
 					"name": "BeanStalk"
 				},
 				{
-					"name": "CloudFlare"
+					"name": "BitBucket"
 				},
 				{
-					"name": "Contentful",
+					"name": "CloudFlare",
 					"priority": 2
+				},
+				{
+					"name": "Contentful"
 				},
 				{
 					"name": "Firebase",
@@ -125,7 +184,8 @@
 					"name": "Google Apps"
 				},
 				{
-					"name": "GitHub Pages"
+					"name": "GitHub",
+					"priority": 3
 				},
 				{
 					"name": "Heroku"
@@ -140,24 +200,17 @@
 					"name": "Postmark"
 				},
 				{
-					"name": "Wordpress",
-					"priority": 3
+					"name": "Wordpress"
 				}
 			]
 		},
 		{
 			"name": "Software",
 			"icon": "laptop",
-			"description": "Excels in all walks of software, and uses industry-standard apps like ",
+			"description": "Excels in all walks of software, and has plentiful experience with industry-standard apps like ",
 			"items": [
 				{
-					"name": "1Password"
-				},
-				{
 					"name": "Acrobat"
-				},
-				{
-					"name": "Atom"
 				},
 				{
 					"name": "BackBlaze"
@@ -170,9 +223,6 @@
 				},
 				{
 					"name": "Excel"
-				},
-				{
-					"name": "GitHub"
 				},
 				{
 					"name": "Google Docs"
@@ -193,13 +243,17 @@
 					"name": "Keynote"
 				},
 				{
-					"name": "Pheonix"
+					"name": "Pheonix.js"
+				},
+				{
+					"name": "Outlook"
 				},
 				{
 					"name": "Photoshop"
 				},
 				{
-					"name": "Postman"
+					"name": "Postman",
+					"priority": 2
 				},
 				{
 					"name": "Remote Desktop"
@@ -218,9 +272,6 @@
 					"name": "Slack"
 				},
 				{
-					"name": "Spotify"
-				},
-				{
 					"name": "Sublime Text",
 					"priority": 1
 				},
@@ -228,14 +279,19 @@
 					"name": "Team Viewer"
 				},
 				{
-					"name": "Terminal",
-					"priority": 2
+					"name": "Terminal"
 				},
 				{
 					"name": "Tower"
 				},
 				{
 					"name": "Transmit"
+				},
+				{
+					"name": "VirtualBox"
+				},
+				{
+					"name": "VSCode"
 				},
 				{
 					"name": "Word"
@@ -320,22 +376,11 @@
 						"mailgun"
 					]
 				},
-
 				{
 					"name": "Paze",
 					"url": "https://paze.com",
 					"tags": [
 						"angular",
-						"static",
-						"cloudflare",
-						"formspree"
-					]
-				},
-				{
-					"name": "Campbell School of Highland Dance",
-					"url": "https://campbelldancers.com",
-					"priority": 1,
-					"tags": [
 						"static",
 						"cloudflare",
 						"formspree"
@@ -357,18 +402,18 @@
 					"tags": [
 						"angular",
 						"contentful"
-					]
+					],
+					"relevant": false
 				},
-
 				{
 					"name": "AXIAL Energy Technologies",
 					"url": "http://axialenergytech.com",
 					"tags": [
 						"jquery",
 						"kohana"
-					]
+					],
+					"relevant": false
 				},
-
 				{
 					"name": "Cold Bore Technology",
 					"url": "https://coldboretechnology.com",
@@ -377,7 +422,8 @@
 						"wordpress-api",
 						"cloudflare",
 						"formspree"
-					]
+					],
+					"relevant": false
 				},
 				{
 					"name": "Draganfly",
@@ -385,18 +431,40 @@
 					"tags": [
 						"angular",
 						"wordpress-api"
-					]
+					],
+					"relevant": false
 				},
 				{
 					"name": "Slyce",
 					"url": "http://slyce.it",
-					"priority": 2,
 					"tags": [
 						"angular",
 						"wordpress",
 						"wordpress-api",
 						"cloudflare",
 						"formspree"
+					],
+					"relevant": false
+				},
+
+				{
+					"name": "Campbell School of Highland Dance",
+					"url": "https://campbelldancers.com",
+					"priority": 1,
+					"tags": [
+						"static",
+						"cloudflare",
+						"formspree"
+					]
+				},
+				{
+					"name": "Beauti-Tone Digital Fandeck",
+					"url": "http://beautitonefandeck.renoworks.com/",
+					"priority": 2,
+					"tags": [
+						"vue",
+						"vuetify",
+						"canvas"
 					]
 				}
 			]
@@ -407,9 +475,20 @@
 			"description": "Creates collaborative web apps to coordinate offline interests; e.g. ",
 			"items": [
 				{
+					"name": "BIGSIG",
+					"url": "http://tools.businessinstincts.com/signature/",
+					"tags": [
+						"angular",
+						"firebase",
+						"bootstrap"
+					],
+					"relevant": false
+				},
+
+				{
 					"name": "Roster IO",
 					"url": "https://roster.mismith.io",
-					"priority": 1,
+					"priority": 3,
 					"tags": [
 						"angular",
 						"firebase",
@@ -421,16 +500,6 @@
 				{
 					"name": "Lineup Planner",
 					"url": "https://mismith.github.io/lineup-planner/",
-					"priority": 3,
-					"tags": [
-						"angular",
-						"firebase",
-						"bootstrap"
-					]
-				},
-				{
-					"name": "BIGSIG",
-					"url": "http://tools.businessinstincts.com/signature/",
 					"tags": [
 						"angular",
 						"firebase",
@@ -440,10 +509,36 @@
 				{
 					"name": "Treasure League Clue Explorer",
 					"url": "https://mismith.github.io/treasure-league-clue-explorer/",
-					"priority": 2,
 					"tags": [
 						"angular2",
 						"firebase"
+					]
+				},
+				{
+					"name": "ScotDance.app",
+					"url": "https://scotdance.app/",
+					"priority": 1,
+					"tags": [
+						"vue",
+						"vuetify",
+						"firebase",
+						"postmark",
+						"material-design",
+						"cloudflare",
+						"cordova",
+						"ios",
+						"android"
+					]
+				},
+				{
+					"name": "Seasons",
+					"url": "https://seasons.mismith.io",
+					"priority": 2,
+					"tags": [
+						"react",
+						"firebase",
+						"material-design",
+						"cloudflare"
 					]
 				}
 			]
@@ -456,7 +551,6 @@
 				{
 					"name": "Tic Tools",
 					"url": "https://mismith.github.io/tic-tools/",
-					"priority": 1,
 					"tags": [
 						"react",
 						"firebase"
@@ -482,6 +576,7 @@
 				{
 					"name": "UT99 Announcer",
 					"url": "https://mismith.github.io/ut99announcer/",
+					"priority": 3,
 					"tags": [
 						"angular",
 						"html5"
@@ -491,7 +586,7 @@
 				{
 					"name": "Bring Back Soda Licious",
 					"url": "http://bringbacksodalicious.com",
-					"priority": 3,
+					"priority": 1,
 					"tags": [
 						"angular",
 						"firebase"
@@ -502,6 +597,52 @@
 					"url": "https://mismith.github.io/",
 					"tags": [
 						"vue"
+					],
+					"relevant": false
+				},
+				{
+					"name": "Resumé",
+					"url": "https://mismith.github.io/resume/",
+					"tags": [
+						"vue",
+						"static"
+					],
+					"relevant": false
+				},
+				{
+					"name": "User Admin Panel",
+					"url": "https://mismith.github.io/user-admin",
+					"tags": [
+						"vue",
+						"vuetify",
+						"material-design",
+						"static"
+					]
+				},
+				{
+					"name": "Casa Capp",
+					"url": "https://mismith.github.io/casa-capp/",
+					"tags": [
+						"angular",
+						"firebase"
+					],
+					"relevant": false
+				},
+				{
+					"name": "Drumbeats",
+					"url": "https://mismith.github.io/drumbeats/",
+					"tags": [
+						"angular",
+						"firebase"
+					]
+				},
+				{
+					"name": "List Grouper",
+					"url": "https://list-grouper.firebaseapp.com/",
+					"tags": [
+						"vue",
+						"firebase",
+						"material-design"
 					]
 				}
 			]
@@ -522,7 +663,7 @@
 				{
 					"name": "Whiplinker",
 					"url": "https://github.com/mismith/whiplinker",
-					"priority": 3,
+					"priority": 1,
 					"tags": [
 						"vanilla-js",
 						"es2015"
@@ -531,7 +672,6 @@
 				{
 					"name": "Regex Input String",
 					"url": "https://github.com/mismith/regex-input-string",
-					"priority": 2,
 					"tags": [
 						"vanilla-js",
 						"es2015"
@@ -550,7 +690,6 @@
 				{
 					"name": "AngularFire Helper",
 					"url": "https://github.com/mismith/angularfire-helper",
-					"priority": 1,
 					"tags": [
 						"angular",
 						"firebase"
@@ -563,6 +702,26 @@
 						"php",
 						"wordpress"
 					]
+				},
+				{
+					"name": "Pilfer Package",
+					"url": "https://github.com/mismith/pilfer-package",
+					"priority": 3,
+					"tags": [
+						"node",
+						"npm"
+					]
+				},
+				{
+					"name": "Firebase Tools",
+					"url": "https://github.com/mismith/firebase-tools",
+					"priority": 2,
+					"tags": [
+						"node",
+						"typescipt",
+						"firebase",
+						"jest"
+					]
 				}
 			]
 		}
@@ -573,21 +732,21 @@
 			"title": "Senior Web Application Developer",
 			"duration": "Summer 2017 - Present",
 			"description": "Hired to build an MVP app for transforming company's 2D product(s) into the third dimension. After completing this project, worked with a small team of dedicated developers to forge an entirely overhauled company development presence—from process to technology to strategy and beyond.",
-			"url": "http://renoworks.com/"
+			"url": "https://renoworks.com/"
 		},
 		{
 			"name": "SMART Technologies",
 			"title": "Front End Developer",
 			"duration": "Fall 2016 - Summer 2017",
 			"description": "Bridged the code gap between design and back-end development in industry-spanning enterprise setting; lead the charge in modernizing legacy digital assets, along with architecting an internal component prototying tool.",
-			"url": "https://home.smarttech.com/"
+			"url": "https://smarttech.com/"
 		},
 		{
 			"name": "Business Instincts Group",
 			"title": "Web Developer / IT Manager",
 			"duration": "Spring 2012 - Fall 2016",
 			"description": "Developed, maintained, and oversaw all digital assets (websites/apps, IT infrastructure) for venture-creation / business consulting firm and its numerous startups.",
-			"url": "http://businessinstincts.com/"
+			"url": "https://businessinstincts.com/"
 		},
 		{
 			"name": "Calgary Cinematheque",

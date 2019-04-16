@@ -9,12 +9,10 @@ let MiResume = Vue.extend({
 		};
 	},
 	methods: {
-		sortByName(items) {
-			return items.sort((a, b) => {
-				let A = a.name.toLowerCase(),
-					B = b.name.toLowerCase();
-
-				return A < B ? -1 : (B < A ? 1 : 0);
+		sortByName(a, b) {
+			return a.name.localeCompare(b.name, {
+				sensitivity: 'base',
+				numeric: true,
 			});
 		},
 		sortByPriority(items) {
@@ -78,6 +76,7 @@ let MiResume = Vue.extend({
 							let half = Math.ceil(this.resume[section].length / 2);
 							this.filtered[section] = this.resume[section].map((item, i) => {
 								item._order = i < half ? i * 2 : i * 2 - this.resume[section].length + 1;
+								item.items = item.items && item.items.filter(item => item.relevant !== false).sort(this.sortByName);
 								return item;
 							});
 							break;
@@ -129,7 +128,7 @@ let MiResume = Vue.extend({
 			</ol>
 			<a v-if="article.items" :href="url + '#' + section + '-' + i" @click.prevent="toggleActive(article)" class="btn more"><i class="fa fa-{{ isActive(article) ? 'minus' : 'plus' }}-circle"></i> {{ article.items.length - 3 }}&nbsp;{{ isActive(article) ? 'less' : 'more' }}</a>
 			<ul v-if="article.items" v-show="isActive(article)" class="more">
-				<li v-for="item of article.items | orderBy 'name'" :class="{priority: item.priority}">
+				<li v-for="item of article.items" :class="{priority: item.priority}">
 					<img v-if="item.url" :src="'https://www.google.com/s2/favicons?domain_url=' + item.url" height="12" />
 					<span v-if="!item.url">{{ item.name }}</span>
 					<a v-if="item.url" :href="item.url" target="_blank">{{ item.name }}</a>
