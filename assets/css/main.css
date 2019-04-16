@@ -513,7 +513,7 @@ body {
   font: 400 15px/1.2 Helvetica, Arial, sans-serif; }
 
 main > section {
-  margin-top: 40px; }
+  margin-top: 30px; }
 
 strong + a {
   display: block; }
@@ -654,7 +654,4 @@ ul.more {
     background: none; }
   #app {
     padding-left: 0;
-    padding-right: 0; }
-  #social {
-    page-break-after: always;
-         break-after: always; } }
+    padding-right: 0; } }
