@@ -207,7 +207,7 @@
 		{
 			"name": "Software",
 			"icon": "laptop",
-			"description": "Excels in all walks of software, and has plentiful experience with industry-standard apps like ",
+			"description": "Excels in all walks of software, and has plenty of experience using industry-standard apps like ",
 			"items": [
 				{
 					"name": "Acrobat"
@@ -272,8 +272,7 @@
 					"name": "Slack"
 				},
 				{
-					"name": "Sublime Text",
-					"priority": 1
+					"name": "Sublime Text"
 				},
 				{
 					"name": "Team Viewer"
@@ -291,7 +290,8 @@
 					"name": "VirtualBox"
 				},
 				{
-					"name": "VSCode"
+					"name": "VSCode",
+					"priority": 1
 				},
 				{
 					"name": "Word"
