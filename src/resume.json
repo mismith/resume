@@ -72,9 +72,6 @@
 					"name": "Koa"
 				},
 				{
-					"name": "Kohana"
-				},
-				{
 					"name": "LESS"
 				},
 				{
@@ -122,6 +119,9 @@
 					"name": "Stylus"
 				},
 				{
+					"name": "Svelte"
+				},
+				{
 					"name": "SVN"
 				},
 				{
@@ -156,10 +156,13 @@
 			]
 		},
 		{
-			"name": "Services",
+			"name": "Tools",
 			"icon": "database",
-			"description": "Keeps stack current using developer-centric platforms and services like ",
+			"description": "Keeps stack current using developer-centric offerings like ",
 			"items": [
+				{
+					"name": "Amazon AWS"
+				},
 				{
 					"name": "BeanStalk"
 				},
@@ -167,8 +170,7 @@
 					"name": "BitBucket"
 				},
 				{
-					"name": "CloudFlare",
-					"priority": 2
+					"name": "CloudFlare"
 				},
 				{
 					"name": "Contentful"
@@ -185,10 +187,14 @@
 				},
 				{
 					"name": "GitHub",
-					"priority": 3
+					"priority": 2
 				},
 				{
 					"name": "Heroku"
+				},
+				{
+					"name": "JIRA",
+					"priority": 3
 				},
 				{
 					"name": "Mailgun"
@@ -207,53 +213,31 @@
 		{
 			"name": "Software",
 			"icon": "laptop",
-			"description": "Excels in all walks of software, and has plenty of experience using industry-standard apps like ",
+			"description": "Excels in all walks of software, and has ample experience using industry-standard apps like ",
 			"items": [
 				{
-					"name": "Acrobat"
-				},
-				{
-					"name": "BackBlaze"
-				},
-				{
-					"name": "Chrome"
+					"name": "Adobe CS"
 				},
 				{
 					"name": "Dropbox"
 				},
 				{
-					"name": "Excel"
-				},
-				{
-					"name": "Google Docs"
-				},
-				{
-					"name": "Google Sheets"
+					"name": "Google GSuite"
 				},
 				{
 					"name": "Harvest"
 				},
 				{
-					"name": "Illustrator"
-				},
-				{
-					"name": "InDesign"
-				},
-				{
 					"name": "Keynote"
+				},
+				{
+					"name": "Microsoft Office"
 				},
 				{
 					"name": "Pheonix.js"
 				},
 				{
-					"name": "Outlook"
-				},
-				{
-					"name": "Photoshop"
-				},
-				{
-					"name": "Postman",
-					"priority": 2
+					"name": "Postman"
 				},
 				{
 					"name": "Remote Desktop"
@@ -275,16 +259,11 @@
 					"name": "Sublime Text"
 				},
 				{
-					"name": "Team Viewer"
-				},
-				{
-					"name": "Terminal"
+					"name": "Terminal",
+					"priority": 2
 				},
 				{
 					"name": "Tower"
-				},
-				{
-					"name": "Transmit"
 				},
 				{
 					"name": "VirtualBox"
@@ -292,9 +271,6 @@
 				{
 					"name": "VSCode",
 					"priority": 1
-				},
-				{
-					"name": "Word"
 				},
 				{
 					"name": "Xcode"
@@ -324,7 +300,7 @@
 		{
 			"name": "Athletics",
 			"icon": "heartbeat",
-			"description": "Focuses on competitive squash, and enjoys weekly social sports such as ultimate, dodgeball, and volleyball."
+			"description": "Lifelong athlete; competes in weekly social sports like squash, ultimate, dodgeball, badminton, and volleyball."
 		}
 	],
 	"social": [
@@ -374,6 +350,24 @@
 						"jquery",
 						"static",
 						"mailgun"
+					]
+				},
+				{
+					"name": "CertainTeed ColorView",
+					"url": "https://colorview.certainteed.com/",
+					"tags": [
+						"jquery",
+						"node",
+						"bootstrap"
+					]
+				},
+				{
+					"name": "CHI DoorVisions",
+					"url": "https://doorvisions.chiohd.com/",
+					"tags": [
+						"vue",
+						"vuex",
+						"bootstrap"
 					]
 				},
 				{
@@ -546,7 +540,7 @@
 		{
 			"name": "Personal",
 			"icon": "flask",
-			"description": "Learns and experiments with new technology by creating tools like ",
+			"description": "Learns and experiments with new (to me) technology by creating tools like ",
 			"items": [
 				{
 					"name": "Tic Tools",
@@ -644,6 +638,26 @@
 						"firebase",
 						"material-design"
 					]
+				},
+				{
+					"name": "Squiz",
+					"url": "https://squiz.mismith.io/",
+					"tags": [
+						"react",
+						"firebase",
+						"material-design"
+					],
+					"relevant": false
+				},
+				{
+					"name": "CSSC Calendar",
+					"url": "https://github.com/mismith/cssc-calendar",
+					"tags": [
+						"terminal",
+						"ical",
+						"jsdom"
+					],
+					"relevant": false
 				}
 			]
 		},
@@ -722,6 +736,14 @@
 						"firebase",
 						"jest"
 					]
+				},
+				{
+					"name": "ccd",
+					"url": "https://github.com/mismith/ccd",
+					"tags": [
+						"terminal"
+					],
+					"relevant": false
 				}
 			]
 		}
