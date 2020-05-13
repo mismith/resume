@@ -70,34 +70,32 @@ var MiResume = Vue.extend({
 			_this.filtered = {};
 
 			var _loop = function _loop(section) {
-				(function () {
-					switch (section) {
-						case 'experience':
-						case 'education':
-						case 'volunteering':
-							// remove irrelevant entries
-							_this.filtered[section] = _this.resume[section].filter(function (item) {
+				switch (section) {
+					case 'experience':
+					case 'education':
+					case 'volunteering':
+						// remove irrelevant entries
+						_this.filtered[section] = _this.resume[section].filter(function (item) {
+							return item.relevant !== false;
+						});
+						break;
+					case 'about':
+					case 'portfolio':
+						// store order for columnal display
+						var half = Math.ceil(_this.resume[section].length / 2);
+						_this.filtered[section] = _this.resume[section].map(function (item, i) {
+							item._order = i < half ? i * 2 : i * 2 - _this.resume[section].length + 1;
+							item.items = item.items && item.items.filter(function (item) {
 								return item.relevant !== false;
-							});
-							break;
-						case 'about':
-						case 'portfolio':
-							// store order for columnal display
-							var half = Math.ceil(_this.resume[section].length / 2);
-							_this.filtered[section] = _this.resume[section].map(function (item, i) {
-								item._order = i < half ? i * 2 : i * 2 - _this.resume[section].length + 1;
-								item.items = item.items && item.items.filter(function (item) {
-									return item.relevant !== false;
-								}).sort(_this.sortByName);
-								return item;
-							});
-							break;
-						default:
-							// no filtering needed
-							_this.filtered[section] = _this.resume[section];
-							break;
-					}
-				})();
+							}).sort(_this.sortByName);
+							return item;
+						});
+						break;
+					default:
+						// no filtering needed
+						_this.filtered[section] = _this.resume[section];
+						break;
+				}
 			};
 
 			for (var section in _this.resume) {
