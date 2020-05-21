@@ -28,12 +28,12 @@ new Vue({
         return A < B ? -1 : (B < A ? 1 : 0);
       });
     },
-    topPicks(items, num = 3) {
+    topPicks(items) {
       if (!items) return;
 
       let picks = [].concat(items);
       this.sortByPriority(picks);
-      return picks.slice(0, num);
+      return picks.filter(({ priority }) => priority);
     },
     replaceStrings(text, replacements) {
       if (!text || !replacements) return;
