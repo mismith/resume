@@ -117,7 +117,7 @@ let MiResume = Vue.extend({
 </header>
 <section v-for="section of ['about','portfolio']" :id="section">
 	<header>
-		<h2>{{ section }}</h2>
+		<h2><a href="#{{ section }}">{{ section }}</a></h2>
 	</header>
 	<ul class="flex-row">
 		<li v-for="(i, article) of filtered[section] | orderBy order" :id="section + '-' + i" class="iconed">
@@ -126,6 +126,7 @@ let MiResume = Vue.extend({
 			<ol v-if="article.items" class="picks">
 				<li v-for="pick of topPicks(article.items)"><span v-if="!pick.url">{{ pick.name }}</span><a v-if="pick.url" :href="pick.url" target="_blank">{{ pick.name }}</a></li>
 			</ol>
+			<!--
 			<a v-if="article.items" :href="url + '#' + section + '-' + i" @click.prevent="toggleActive(article)" class="btn more"><i class="fa fa-{{ isActive(article) ? 'minus' : 'plus' }}-circle"></i> {{ article.items.length - 3 }}&nbsp;{{ isActive(article) ? 'less' : 'more' }}</a>
 			<ul v-if="article.items" v-show="isActive(article)" class="more">
 				<li v-for="item of article.items" :class="{priority: item.priority}">
@@ -137,12 +138,13 @@ let MiResume = Vue.extend({
 					</ul>
 				</li>
 			</ul>
+			-->
 		</li>
 	</ul>
 </section>
 <section id="social">
 	<header>
-		<h2>social</h2>
+		<h2><a href="#social">social</a></h2>
 	</header>
 	<ul class="flex-row flex-justify-around">
 		<li v-for="item of filtered.social">
@@ -150,9 +152,9 @@ let MiResume = Vue.extend({
 		</li>
 	</ul>
 </section>
-<section v-for="section of ['experience','education','volunteering']" :id="section">
+<section v-for="section of ['experience','education','volunteering']" v-if="filtered[section].length" :id="section">
 	<header>
-		<h2>{{ section }}</h2>
+		<h2><a href="#{{ section }}">{{ section }}</a></h2>
 	</header>
 	<ol>
 		<li v-for="item of (isActive(section) ? resume : filtered)[section]">
@@ -164,13 +166,13 @@ let MiResume = Vue.extend({
 			<div v-if="item.description">{{ item.description }}</div>
 		</li>
 	</ol>
-	<footer>
+	<!--<footer>
 		<a v-if="filtered[section].length < resume[section].length" :href="url + '#' + section" @click.prevent="toggleActive(section)" class="btn more"><i class="fa fa-{{ isActive(section) ? 'minus' : 'plus' }}-circle"></i> {{ resume[section].length - filtered[section].length }}&nbsp;{{ isActive(section) ? 'less' : 'more' }}</a>
-	</footer>
+	</footer>-->
 </section>
 <section id="references">
 	<header>
-		<h2>references</h2>
+		<h2><a href="#references">references</a></h2>
 	</header>
 	<ul>
 		<li>

@@ -1,14 +1,14 @@
 {
 	"info": {
 		"name": "Murray Smith",
-		"description": "I'm a percolative propellorhead and curious, focused problem-solver. I'm looking to leverage my talent for learning by building world-class web apps and tools alongside a clever and passionate team.",
+		"description": "I'm a percolative propellorhead and curious, focused problem-solver. As a talented learner and proven achiever, I'm looking to build world-class web apps and tools alongside a clever and passionate team.",
 		"email": "murray@mismith.info",
 		"image": "https://s.gravatar.com/avatar/cdcf18869ba9508c801c6abb9031c73e?s=256"
 	},
 	"about": [
 		{
 			"name": "Tech",
-			"icon": "html5",
+			"icon": "leaf",
 			"description": "Well-versed in modern web technologies like ",
 			"items": [
 				{
@@ -88,7 +88,7 @@
 				},
 				{
 					"name": "Node",
-					"priority": 4
+					"priority": 3
 				},
 				{
 					"name": "npm"
@@ -104,7 +104,7 @@
 				},
 				{
 					"name": "React",
-					"priority": 2
+					"priority": 4
 				},
 				{
 					"name": "REST APIs"
@@ -132,7 +132,7 @@
 				},
 				{
 					"name": "Typescript",
-					"priority": 3
+					"priority": 2
 				},
 				{
 					"name": "Vagrant"
@@ -156,12 +156,13 @@
 			]
 		},
 		{
-			"name": "Tools",
+			"name": "Services",
 			"icon": "database",
-			"description": "Keeps stack current using developer-centric offerings like ",
+			"description": "Amplifies skills with dev-centric services like ",
 			"items": [
 				{
-					"name": "Amazon AWS"
+					"name": "AWS",
+					"priority": 2
 				},
 				{
 					"name": "BeanStalk"
@@ -183,17 +184,10 @@
 					"name": "Formspree"
 				},
 				{
-					"name": "Google Apps"
-				},
-				{
-					"name": "GitHub",
-					"priority": 2
-				},
-				{
 					"name": "Heroku"
 				},
 				{
-					"name": "JIRA",
+					"name": "GitHub",
 					"priority": 3
 				},
 				{
@@ -211,12 +205,13 @@
 			]
 		},
 		{
-			"name": "Software",
+			"name": "Tools",
 			"icon": "laptop",
-			"description": "Excels in all walks of software, and has ample experience using industry-standard apps like ",
+			"description": "Intuitively masters industry tools like ",
 			"items": [
 				{
-					"name": "Adobe CS"
+					"name": "Adobe Creative Suite",
+					"priority": 2
 				},
 				{
 					"name": "Dropbox"
@@ -226,6 +221,10 @@
 				},
 				{
 					"name": "Harvest"
+				},
+				{
+					"name": "JIRA",
+					"priority": 3
 				},
 				{
 					"name": "Keynote"
@@ -249,8 +248,7 @@
 					"name": "OS X Server"
 				},
 				{
-					"name": "Sketch",
-					"priority": 3
+					"name": "Sketch"
 				},
 				{
 					"name": "Slack"
@@ -259,8 +257,7 @@
 					"name": "Sublime Text"
 				},
 				{
-					"name": "Terminal",
-					"priority": 2
+					"name": "Terminal"
 				},
 				{
 					"name": "Tower"
@@ -269,13 +266,24 @@
 					"name": "VirtualBox"
 				},
 				{
-					"name": "VSCode",
+					"name": "VS Code",
 					"priority": 1
 				},
 				{
 					"name": "Xcode"
 				}
 			]
+		},
+		{
+			"name": "Leadership",
+			"icon": "sitemap",
+			"description": "Thinks ideas through from a high level, and uses natural organizational skills to lead and collaborate with others accordingly."
+		},
+		{
+			"name": "Quality",
+			"icon": "certificate",
+			"description": "Takes deep pride in the quality of both process and results, and is more interested in doing things properly than simply getting them done.",
+			"more": "high-quality work. high quality, UX-centric, engineer not get it done, leader, organizer"
 		},
 		{
 			"name": "Communication",
@@ -300,7 +308,94 @@
 		{
 			"name": "Athletics",
 			"icon": "heartbeat",
-			"description": "Lifelong athlete; competes in weekly social sports like squash, ultimate, dodgeball, badminton, and volleyball."
+			"description": "Lifelong athlete; competes in weekly social sports like badminton, dodgeball, squash, ultimate, and volleyball."
+		}
+	],
+	"experience": [
+		{
+			"name": "Renoworks Software",
+			"title": "Senior Web Application Developer",
+			"duration": "Summer 2017 - Present",
+			"description": "Hired to build an MVP app for transforming company's 2D product(s) into the third dimension. After completing this project, worked to forge an entirely overhauled company development presence—from process to technology to strategy and beyond.",
+			"url": "https://renoworks.com/"
+		},
+		{
+			"name": "SMART Technologies",
+			"title": "Front End Developer",
+			"duration": "Fall 2016 - Summer 2017",
+			"description": "Bridged the code gap between design and back-end development in industry-spanning enterprise setting; lead the charge in modernizing legacy digital assets, along with architecting an internal component prototying tool.",
+			"url": "https://smarttech.com/"
+		},
+		{
+			"name": "Business Instincts Group",
+			"title": "Web Developer / IT Manager",
+			"duration": "Spring 2012 - Fall 2016",
+			"description": "Developed, maintained, and oversaw all digital assets (websites/apps, IT infrastructure) for venture-creation / business consulting firm and its numerous startups.",
+			"url": "https://businessinstincts.com/"
+		},
+		{
+			"name": "Calgary Cinematheque",
+			"title": "Admin Coordinator",
+			"duration": "Fall 2010 - Summer 2012",
+			"description": "Acted upon all orders of business for non-profit theatrical film exhibition society: from box office accounting to web administration.",
+			"url": "http://calgarycinema.org/",
+			"relevant": false
+		},
+		{
+			"name": "Calgary Society of Independent Filmmakers",
+			"title": "Communications Coordinator",
+			"duration": "Winter 2011 - Spring 2012",
+			"description": "Administered all internal and public relations duties; e.g. publishing weekly e-newsletters and maintaining member databases.",
+			"url": "http://csif.org/",
+			"relevant": false
+		},
+		{
+			"name": "Calgary Society of Independent Filmmakers",
+			"title": "Production Coordinator",
+			"duration": "Summer 2011",
+			"description": "Oversaw extensive film/video production facility, including: handling of a high-volume of professional equipment, and coordinating all in-house technical operations.",
+			"url": "http://csif.org/",
+			"relevant": false
+		},
+		{
+			"name": "Calgary International Film Festival",
+			"title": "Print Traffic Assistant",
+			"duration": "Fall 2011",
+			"description": "Oversaw the shipping and receiving of all film prints at annual festival. Calmly handled all time-sensitive (and notoriously unpredictable) issues that arose.",
+			"url": "http://calgaryfilm.com/",
+			"relevant": false
+		},
+		{
+			"name": "Birchcliff Energy Ltd.",
+			"title": "Graphic Designer",
+			"duration": "Summer 2010",
+			"description": "Designed and produced a corporate one-pager, along with various other presentation materials.",
+			"url": "http://birchcliffenergy.com/",
+			"relevant": false
+		},
+		{
+			"name": "Bethany Care Society - Corporate Headquarters",
+			"title": "Data Entry",
+			"duration": "Summer 2009 - Spring 2010",
+			"description": "Logged private survey data, then designed and implemented a secure web-based interface and database backend for data analysis.",
+			"url": "http://bethanycare.com/",
+			"relevant": false
+		},
+		{
+			"name": "Barbecues Galore",
+			"title": "Warehouse & Sales",
+			"duration": "Summer 2006 - Fall 2008",
+			"description": "Assembled barbeques, staffed warehouse, and manned the sales floor.",
+			"url": "http://barbecuesgalore.ca",
+			"relevant": false
+		},
+		{
+			"name": "Papa John's Pizza",
+			"title": "Cook",
+			"duration": "Spring 2004 - Spring 2006",
+			"description": "Cooked and prepared pizzas and pizza ingredients.",
+			"url": "http://papajohnspizza.ca/",
+			"relevant": false
 		}
 	],
 	"social": [
@@ -748,93 +843,6 @@
 			]
 		}
 	],
-	"experience": [
-		{
-			"name": "Renoworks Software",
-			"title": "Senior Web Application Developer",
-			"duration": "Summer 2017 - Present",
-			"description": "Hired to build an MVP app for transforming company's 2D product(s) into the third dimension. After completing this project, worked with a small team of dedicated developers to forge an entirely overhauled company development presence—from process to technology to strategy and beyond.",
-			"url": "https://renoworks.com/"
-		},
-		{
-			"name": "SMART Technologies",
-			"title": "Front End Developer",
-			"duration": "Fall 2016 - Summer 2017",
-			"description": "Bridged the code gap between design and back-end development in industry-spanning enterprise setting; lead the charge in modernizing legacy digital assets, along with architecting an internal component prototying tool.",
-			"url": "https://smarttech.com/"
-		},
-		{
-			"name": "Business Instincts Group",
-			"title": "Web Developer / IT Manager",
-			"duration": "Spring 2012 - Fall 2016",
-			"description": "Developed, maintained, and oversaw all digital assets (websites/apps, IT infrastructure) for venture-creation / business consulting firm and its numerous startups.",
-			"url": "https://businessinstincts.com/"
-		},
-		{
-			"name": "Calgary Cinematheque",
-			"title": "Admin Coordinator",
-			"duration": "Fall 2010 - Summer 2012",
-			"description": "Acted upon all orders of business for non-profit theatrical film exhibition society: from box office accounting to web administration.",
-			"url": "http://calgarycinema.org/",
-			"relevant": false
-		},
-		{
-			"name": "Calgary Society of Independent Filmmakers",
-			"title": "Communications Coordinator",
-			"duration": "Winter 2011 - Spring 2012",
-			"description": "Administered all internal and public relations duties; e.g. publishing weekly e-newsletters and maintaining member databases.",
-			"url": "http://csif.org/",
-			"relevant": false
-		},
-		{
-			"name": "Calgary Society of Independent Filmmakers",
-			"title": "Production Coordinator",
-			"duration": "Summer 2011",
-			"description": "Oversaw extensive film/video production facility, including: handling of a high-volume of professional equipment, and coordinating all in-house technical operations.",
-			"url": "http://csif.org/",
-			"relevant": false
-		},
-		{
-			"name": "Calgary International Film Festival",
-			"title": "Print Traffic Assistant",
-			"duration": "Fall 2011",
-			"description": "Oversaw the shipping and receiving of all film prints at annual festival. Calmly handled all time-sensitive (and notoriously unpredictable) issues that arose.",
-			"url": "http://calgaryfilm.com/",
-			"relevant": false
-		},
-		{
-			"name": "Birchcliff Energy Ltd.",
-			"title": "Graphic Designer",
-			"duration": "Summer 2010",
-			"description": "Designed and produced a corporate one-pager, along with various other presentation materials.",
-			"url": "http://birchcliffenergy.com/",
-			"relevant": false
-		},
-		{
-			"name": "Bethany Care Society - Corporate Headquarters",
-			"title": "Data Entry",
-			"duration": "Summer 2009 - Spring 2010",
-			"description": "Logged private survey data, then designed and implemented a secure web-based interface and database backend for data analysis.",
-			"url": "http://bethanycare.com/",
-			"relevant": false
-		},
-		{
-			"name": "Barbecues Galore",
-			"title": "Warehouse & Sales",
-			"duration": "Summer 2006 - Fall 2008",
-			"description": "Assembled barbeques, staffed warehouse, and manned the sales floor.",
-			"url": "http://barbecuesgalore.ca",
-			"relevant": false
-		},
-		{
-			"name": "Papa John's Pizza",
-			"title": "Cook",
-			"duration": "Spring 2004 - Spring 2006",
-			"description": "Cooked and prepared pizzas and pizza ingredients.",
-			"url": "http://papajohnspizza.ca/",
-			"relevant": false
-		}
-	],
 	"education": [
 		{
 			"name": "University of Calgary",
@@ -856,13 +864,15 @@
 			"name": "Calgary Society of Independent Filmmakers",
 			"description": "Exhibition curator; committee member; festival programming jury member; graphic designer; blogger; published writer.",
 			"duration": "Fall 2008 - Summer 2012",
-			"url": "http://csif.org/"
+			"url": "http://csif.org/",
+			"relevant": false
 		},
 		{
 			"name": "Calgary Cinematheque Society",
 			"description": "Ex-officio board member; designer; webmaster.",
 			"duration": "Fall 2009 - Fall 2010",
-			"url": "http://calgarycinema.org/"
+			"url": "http://calgarycinema.org/",
+			"relevant": false
 		},
 		{
 			"name": "Calgary International Film Festival",

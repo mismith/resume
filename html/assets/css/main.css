@@ -515,6 +515,9 @@ body {
 main > section {
   margin-top: 30px; }
 
+h2 a {
+  color: inherit; }
+
 strong + a {
   display: block; }
 
