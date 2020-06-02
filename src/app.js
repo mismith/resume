@@ -8,7 +8,7 @@ new Vue({
       resume: undefined,
       filtered: {},
       actives: [],
-      file: '/resume.json',
+      file: './resume.json',
     };
   },
   methods: {
