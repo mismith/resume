@@ -12,7 +12,7 @@
   "devDependencies": {
     "parcel": "^1.12.4",
     "parcel-plugin-static-files-copy": "^2.3.1",
-    "postcss": "^7.0.30",
+    "postcss": "^7.0.36",
     "postcss-cssnext": "^3.1.0"
   },
   "postcss": {
