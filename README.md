@@ -1,3 +1,3 @@
 # Résumé
 
-Printable, JSON-driven personal CV for Murray Smith
+Printable, JSON-driven personal CV for Murray Rowan

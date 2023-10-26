@@ -1,6 +1,6 @@
 {
   "info": {
-    "name": "Murray Smith",
+    "name": "Murray Rowan",
     "description": "I'm a percolative propellorhead—and a curious, focused problem-solver. As a talented learner and proven achiever, I'm looking to build world-class web apps and tools alongside a clever and passionate team.",
     "image": "https://s.gravatar.com/avatar/cdcf18869ba9508c801c6abb9031c73e?s=256"
   },
@@ -322,9 +322,15 @@
   ],
   "experience": [
     {
+      "name": "Paper Education",
+      "title": "Lead Front-End Developer",
+      "duration": "April 2021 - Presewnt",
+      "url": "https://paper.co/"
+    },
+    {
       "name": "Renoworks Software",
       "title": "Senior Web Application Developer",
-      "duration": "Summer 2017 - Present",
+      "duration": "Summer 2017 - April 2021",
       "description": "Hired to build an MVP app for transforming company's 2D product(s) into the third dimension. After completing this, forged an entirely overhauled company development presence—from process to technology to strategy and beyond.",
       "url": "https://renoworks.com/"
     },
