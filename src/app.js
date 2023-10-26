@@ -52,6 +52,7 @@ new Vue({
             case 'about':
             case 'experience':
             case 'education':
+            case 'social':
             case 'volunteering':
             case 'portfolio':
               // remove irrelevant entries

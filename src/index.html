@@ -19,59 +19,36 @@
       <template v-if="resume">
         <header id="header">
           <div>
-            <h1>{{ resume.info.name }}</h1>
+            <div>
+              <h1>{{ resume.info.name }}</h1>
+              <ul class="social nostyle">
+                <li v-for="item of filtered.social" :key="item.name">
+                  <a :href="item.url" :title="item.name" target="_blank">
+                    <i :class="`large fa fa-${className(item.name)}`"></i>
+                    <small>{{ socialName(item.url) }}</small>
+                  </a>
+                </li>
+              </ul>
+            </div>
             <p>{{ resume.info.description }}</p>
           </div>
-          <figure>
+          <!-- <figure>
             <a href="https://s.gravatar.com/avatar/cdcf18869ba9508c801c6abb9031c73e?s=1920" target="_blank">
               <img :src="resume.info.image" width="128" height="128" />
             </a>
-          </figure>
+          </figure> -->
         </header>
-        <section v-for="section of ['about']" :key="section" :id="section">
-          <header>
-            <h2><a :href="`#${section}`">{{ section }}</a></h2>
-          </header>
-          <ul class="nostyle columns">
-            <li
-              v-for="(article, i) of filtered[section]"
-              :key="i"
-              v-if="filtered[section].length"
-              :id="`${section}-${i}`"
-              class="iconed"
-            >
-              <i :class="`fa fa-${article.icon}`" :title="article.name"></i>
-              <span>{{ article.description }}</span>
-              <ol v-if="article.items" class="picks">
-                <li v-for="pick of topPicks(article.items)" :key="pick.name">
-                  <span v-if="!pick.url">{{ pick.name }}</span>
-                  <a v-else :href="pick.url" target="_blank">{{ pick.name }}</a>
-                </li>
-              </ol>
-            </li>
-          </ul>
-        </section>
-        <section id="social">
-          <header>
-            <h2><a href="#social">social</a></h2>
-          </header>
-          <ul class="nostyle">
-            <li v-for="item of filtered.social" :key="item.name">
-              <a :href="item.url" :title="item.name" target="_blank">
-                <i :class="`large fa fa-${className(item.name)}`"></i>
-                <small>{{ socialName(item.url) }}</small>
-              </a>
-            </li>
-          </ul>
-        </section>
         <section
-          v-for="section of ['experience','education','volunteering']"
+          v-for="section of ['experience','education']"
           :key="section"
           v-if="filtered[section].length"
           :id="section"
         >
           <header>
             <h2><a :href="`#${section}`">{{ section }}</a></h2>
+            <p v-if="resume.info.sections[section]">
+              {{ resume.info.sections[section] }}
+            </p>
           </header>
           <ol>
             <li v-for="item of filtered[section]" :key="item.title">
@@ -81,6 +58,9 @@
                 <small v-if="item.duration">{{ item.duration }}</small>
               </header>
               <div v-if="item.description">{{ item.description }}</div>
+              <ul v-if="item.tags" class="tags nostyle">
+                <li v-for="tag in item.tags" :key="tag">{{ tag }}</li>
+              </ul>
             </li>
           </ol>
         </section>
@@ -88,11 +68,7 @@
           <header>
             <h2><a href="#references">references</a></h2>
           </header>
-          <ul>
-            <li>
-              Available <a href="#social" data-media="screen">on request</a><a href="https://bit.ly/mismith-contact-me-2020"  data-media="print">on request</a>.
-            </li>
-          </ul>
+          <p>Available upon request.</p>
         </section>
 
         <footer id="footer">

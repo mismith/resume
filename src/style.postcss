@@ -88,6 +88,7 @@ main {
 #header,
 section {
   margin-top: 30px;
+  page-break-inside: avoid;
 }
 #header {
   display: flex;
@@ -95,6 +96,16 @@ section {
 
   & > div {
     flex: auto;
+
+    & > div {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+  }
+
+  & h1 {
+    margin: 0;
   }
 
   @media (--breakpoint) {
@@ -125,15 +136,14 @@ a {
 h2 a {
   color: inherit;
 }
-strong + a {
-  display: block;
+h2 + p {
+  margin-top: -8px;
 }
 small {
   display: block;
   text-transform: uppercase;
   font-size: 10px;
   opacity: .5;
-  margin: 5px 0;
 }
 h1 {
   @media (--breakpoint) {
@@ -157,6 +167,14 @@ p {
 }
 li {
   margin-bottom: 10px;
+
+  & header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 4px;
+  }
 
   &.iconed {
     position: relative;
@@ -199,6 +217,28 @@ ul {
       columns: 2;
     }
   }
+  &.tags {
+    display: inline-flex;
+    font-size: 14px;
+    gap: 4px;
+    margin-top: 8px;
+
+    & > * {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.75);
+      border-radius: 8px;
+      padding: 1px 4px;
+
+      &:not(:last-child) {
+        margin-right: 0.125em;
+      }
+
+      @media print {
+        font-size: 12px;
+        padding: 0;
+      }
+    }
+  }
 }
 ol {
   &.picks {
@@ -233,12 +273,11 @@ ol {
   }
 }
 
-#social {
-  & ul {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-  }
+.social {
+  display: flex;
+  text-align: center;
+  gap: 16px;
+
   & a {
     &:hover {
       color: var(--darker);
