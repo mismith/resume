@@ -48,27 +48,15 @@ new Vue({
 
         const filtered = {};
         for (let section in resume) {
-          switch (section) {
-            case 'about':
-            case 'experience':
-            case 'education':
-            case 'social':
-            case 'volunteering':
-            case 'portfolio':
-              // remove irrelevant entries
-              filtered[section] = resume[section]
-                .filter(item => item.relevant !== false)
-                .map((item) => {
-                  item.items = item.items && item.items
-                    .filter(item => item.relevant !== false)
-                    .sort(this.sortByName);
-                  return item;
-                });
-              break;
-            default:
-              // no filtering needed
-              filtered[section] = resume[section];
-              break;
+          if (Array.isArray(resume[section])) {
+            filtered[section] = resume[section]
+              .filter(item => item.relevant !== false)
+              .map((item) => {
+                item.items = item.items && item.items
+                  .filter(item => item.relevant !== false)
+                  .sort(this.sortByName);
+                return item;
+              });
           }
         }
         this.filtered = filtered;

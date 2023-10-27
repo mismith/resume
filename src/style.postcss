@@ -100,20 +100,40 @@ section {
     & > div {
       display: flex;
       justify-content: space-between;
-      gap: 16px;
+      flex-wrap: wrap;
+      gap: 24px;
     }
   }
 
   & h1 {
     margin: 0;
+    white-space: nowrap;
+  }
+
+  & figure {
+    margin: 0;
+    margin-bottom: 24px;
+
+    & a {
+      display: inline-block;
+      border: solid 2px var(--primary);
+      border-radius: 2px;
+    }
+    & img {
+      vertical-align: middle;
+    }
+
+    @media print {
+      display: none;
+    }
   }
 
   @media (--breakpoint) {
     flex-direction: row;
-    align-items: center;
 
-    & > figure {
-      margin-left: 30px;
+    & figure {
+      margin-left: 32px;
+      margin-bottom: 0;
     }
   }
 
@@ -136,9 +156,6 @@ a {
 h2 a {
   color: inherit;
 }
-h2 + p {
-  margin-top: -8px;
-}
 small {
   display: block;
   text-transform: uppercase;
@@ -148,18 +165,6 @@ small {
 h1 {
   @media (--breakpoint) {
     margin-top: 0;
-  }
-}
-figure {
-  margin: 0;
-
-  & a {
-    display: inline-block;
-    border: solid 2px var(--primary);
-    border-radius: 2px;
-  }
-  & img {
-    vertical-align: middle;
   }
 }
 p {
@@ -239,8 +244,6 @@ ul {
       }
     }
   }
-}
-ol {
   &.picks {
     display: inline;
     list-style: none;
@@ -272,6 +275,11 @@ ol {
     }
   }
 }
+ul,
+ol {
+  margin-top: 24px;
+  margin-bottom: 0;
+}
 
 .social {
   display: flex;
@@ -291,6 +299,11 @@ ol {
     & small {
       display: none;
     }
+  }
+}
+#social {
+  .social {
+    justify-content: space-between;
   }
 }
 
@@ -342,9 +355,5 @@ ol {
         padding-right: 48px;
       }
     }
-  }
-
-  @media print {
-    display: none;
   }
 }
