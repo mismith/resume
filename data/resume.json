@@ -12,9 +12,16 @@
   },
   "experience": [
     {
+      "name": "Shuttle",
+      "title": "Senior Front-End Developer",
+      "duration": "Spring 2024 - Present",
+      "url": "https://shuttlehq.com/",
+      "tags": ["Vue", "Node", "AWS"]
+    },
+    {
       "name": "Paper Education",
       "title": "Lead Front-End Developer",
-      "duration": "Spring 2021 - Present",
+      "duration": "Spring 2021 - Spring 2024",
       "url": "https://paper.co/",
       "description": "Managed (and/or contributed alongside) various squads of engineers through countless successful major features and special projects (e.g. Student Achievements, Pub/Sub Emulator Tools, Web Toolkit, Chrome Extension, Templated MicroFrontends, introducing TypeScript, full-platform refactors/upgrades). Meanwhile, consistently topped IC stats, and organized and led Front-End Strategy group.",
       "tags": ["Vue", "Laravel", "GCP"]
